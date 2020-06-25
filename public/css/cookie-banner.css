@@ -1,0 +1,883 @@
+@font-face {
+	font-family: Frutiger Next;
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+	src: url(https://e.staedtlercdn.com/releases/2.5.1/fonts/fonts.com/f4276b61d0676f738fcaf139de334d1c.woff2) format("woff2"), url(https://e.staedtlercdn.com/releases/2.5.1/fonts/fonts.com/cecb02dc6e3e0d6aff99a93287953cd3.woff) format("woff");
+}
+
+@font-face {
+	font-family: Frutiger Next;
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+	src: url(https://e.staedtlercdn.com/releases/2.5.1/fonts/fonts.com/c36390702bbea588afbe74a8803cea98.woff2) format("woff2"), url(https://e.staedtlercdn.com/releases/2.5.1/fonts/fonts.com/db73bb3426c66d424b4ff5f1ef36873b.woff) format("woff");
+}
+
+@font-face {
+	font-family: Frutiger Next;
+	font-weight: 300;
+	font-style: normal;
+	font-display: fallback;
+	src: url(https://e.staedtlercdn.com/releases/2.5.1/fonts/fonts.com/6bd24cbf1d00f7afcee5af8695ee2933.woff2) format("woff2"), url(https://e.staedtlercdn.com/releases/2.5.1/fonts/fonts.com/f65e0b3da2a221625eec8c6962e66e0d.woff) format("woff");
+}
+
+staedtler-cookie-banner {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.44;
+	color: rgba(0, 0, 0, .7);
+	text-align: left;
+	z-index: 10000;
+	position: relative;
+}
+
+staedtler-cookie-banner h2 {
+	margin-bottom: 1.25rem;
+	font-family: Frutiger Next, sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
+	color: #00448c;
+}
+
+staedtler-cookie-banner p {
+	margin-bottom: 1rem;
+}
+
+staedtler-cookie-banner a {
+	color: #64a8f0;
+	text-decoration: none;
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+
+.modal-cookie [role=button] {
+	cursor: pointer
+}
+
+.modal-cookie .btn, .modal-cookie .btn-close {
+	display: inline-block;
+	font-weight: 700;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	height: 2.5rem;
+	padding: 0 2.5rem;
+	font-size: 1rem;
+	line-height: 2.5rem;
+	position: relative;
+	z-index: 1;
+	cursor: pointer
+}
+
+@media (min-width: 768px) {
+	.modal-cookie .btn, .modal-cookie .btn-close {
+		height: 3rem;
+		line-height: 3rem
+	}
+}
+
+.modal-cookie .btn-close:focus, .modal-cookie .btn-close:hover, .modal-cookie .btn:focus, .modal-cookie .btn:hover {
+	text-decoration: none
+}
+
+.modal-cookie .btn-close:focus, .modal-cookie .btn:focus {
+	outline: 0;
+	border: 2px solid #00448c
+}
+
+.modal-cookie .btn-close:hover, .modal-cookie .btn:hover {
+	opacity: .8
+}
+
+.modal-cookie .btn-close:disabled, .modal-cookie .btn.disabled, .modal-cookie .btn:disabled, .modal-cookie .disabled.btn-close {
+	opacity: .65;
+	pointer-events: none
+}
+
+.modal-cookie .btn-close:not([disabled]):not(.disabled).active, .modal-cookie .btn-close:not([disabled]):not(.disabled):active, .modal-cookie .btn:not([disabled]):not(.disabled).active, .modal-cookie .btn:not([disabled]):not(.disabled):active {
+	background-image: none
+}
+
+.modal-cookie .btn.icon-arrow-right-in-circle:after, .modal-cookie .btn.icon-basket:after, .modal-cookie .btn.icon-check:after, .modal-cookie .btn.icon-close:after, .modal-cookie .btn.icon-compress:after, .modal-cookie .btn.icon-download:after, .modal-cookie .btn.icon-loading:after, .modal-cookie .btn.icon-minus:after, .modal-cookie .btn.icon-plus:after, .modal-cookie .icon-arrow-right-in-circle.btn-close:after, .modal-cookie .icon-basket.btn-close:after, .modal-cookie .icon-check.btn-close:after, .modal-cookie .icon-close.btn-close:after, .modal-cookie .icon-compress.btn-close:after, .modal-cookie .icon-download.btn-close:after, .modal-cookie .icon-loading.btn-close:after, .modal-cookie .icon-minus.btn-close:after, .modal-cookie .icon-plus.btn-close:after {
+	content: "";
+	position: absolute;
+	width: 1.25rem;
+	height: 1.25rem;
+	top: calc(50% - .625rem);
+	display: inline-block;
+	background: transparent 50% no-repeat;
+	transition: background .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+.modal-cookie .btn.icon-basket:after, .modal-cookie .icon-basket.btn-close:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23FFF'%3E%3Cpath d='M8.353 19.697C7.055 19.697 6 18.746 6 17.576s1.055-2.121 2.353-2.121c1.298 0 2.353.95 2.353 2.12 0 1.17-1.055 2.122-2.353 2.122zm0-3.182c-.648 0-1.177.476-1.177 1.06 0 .585.529 1.061 1.177 1.061s1.176-.476 1.176-1.06c0-.585-.528-1.06-1.176-1.06zm8 3.182c-1.298 0-2.353-.951-2.353-2.121s1.055-2.121 2.353-2.121c1.298 0 2.353.95 2.353 2.12 0 1.17-1.055 2.122-2.353 2.122zm0-3.182c-.648 0-1.177.476-1.177 1.06 0 .585.529 1.061 1.177 1.061s1.176-.476 1.176-1.06c0-.585-.528-1.06-1.176-1.06zm3.105-13.898c-.296-.315-.742-.496-1.223-.496H3.832l-.117-.632C3.561.654 2.705 0 1.765 0H.588C.264 0 0 .238 0 .53c0 .293.264.53.588.53h1.177c.36 0 .73.283.79.604L4.52 12.3c.154.834 1.01 1.489 1.95 1.489h11.765c.325 0 .589-.238.589-.53 0-.293-.264-.53-.589-.53H6.471c-.362 0-.731-.283-.79-.604l-.29-1.57 11.723-.92c.912-.07 1.745-.764 1.895-1.579l.79-4.27a1.336 1.336 0 0 0-.34-1.17l-.001.002zm-.82.993l-.79 4.271c-.062.336-.46.667-.836.697l-11.816.926-1.169-6.323h14.207c.138 0 .253.042.325.12.072.077.1.186.077.308l.002.001z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn.icon-download:after, .modal-cookie .icon-download.btn-close:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 18' fill='%23FFF'%3E%3Cpath d='M15.838 7.93a.566.566 0 0 0-.771 0l-4.523 4.3V.519A.533.533 0 0 0 10 0a.533.533 0 0 0-.546.519v11.71L4.931 7.93a.566.566 0 0 0-.771 0 .501.501 0 0 0 0 .733l5.454 5.186A.558.558 0 0 0 10 14c.14 0 .28-.05.386-.152l5.454-5.186a.501.501 0 0 0 0-.733l-.002.001z'/%3E%3Cpath d='M18.421 18H1.58C.709 18 0 17.327 0 16.5v-2c0-.276.236-.5.526-.5.29 0 .527.224.527.5v2c0 .276.235.5.526.5H18.42c.29 0 .526-.224.526-.5v-2c0-.276.236-.5.527-.5.29 0 .526.224.526.5v2c0 .827-.708 1.5-1.579 1.5z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn.icon-arrow-right-in-circle:after, .modal-cookie .icon-arrow-right-in-circle.btn-close:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23fff' d='M8 256c0 137 111 248 248 248s248-111 248-248S393 8 256 8 8 119 8 256zM256 40c118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216zm-32 88v64H120c-13.2 0-24 10.8-24 24v80c0 13.2 10.8 24 24 24h104v64c0 28.4 34.5 42.8 54.6 22.6l128-128c12.5-12.5 12.5-32.8 0-45.3l-128-128c-20.1-20-54.6-5.8-54.6 22.7zm160 128L256 384v-96H128v-64h128v-96l128 128z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn.icon-close:after, .modal-cookie .icon-close.btn-close:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.87 8l6.95-6.949a.617.617 0 0 0-.871-.871L8 7.13 1.051.18a.617.617 0 0 0-.871.871l6.95 6.95-6.95 6.948a.617.617 0 0 0 .871.871L8 8.87l6.949 6.95a.618.618 0 0 0 .871 0 .617.617 0 0 0 0-.871L8.87 8z' fill='%23FFF'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn.icon-loading:after, .modal-cookie .icon-loading.btn-close:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23fff'%3E%3Cpath d='M288 39.056v16.659c0 10.804 7.281 20.159 17.686 23.066C383.204 100.434 440 171.518 440 256c0 101.689-82.295 184-184 184-101.689 0-184-82.295-184-184 0-84.47 56.786-155.564 134.312-177.219C216.719 75.874 224 66.517 224 55.712V39.064c0-15.709-14.834-27.153-30.046-23.234C86.603 43.482 7.394 141.206 8.003 257.332c.72 137.052 111.477 246.956 248.531 246.667C393.255 503.711 504 392.788 504 256c0-115.633-79.14-212.779-186.211-240.236C302.678 11.889 288 23.456 288 39.056z'/%3E%3C/svg%3E");
+	left: calc(50% - .625rem);
+	animation: a 1.1s infinite linear
+}
+
+.modal-cookie .btn.icon-check:after, .modal-cookie .icon-check.btn-close:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='%23fff'%3E%3Cpath d='M4.376 10a.628.628 0 0 1-.443-.183l-3.75-3.75a.625.625 0 0 1 .884-.884l3.307 3.308L12.683.183a.625.625 0 0 1 .884.884l-8.751 8.75a.623.623 0 0 1-.443.183h.003z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn.icon-right, .modal-cookie .icon-right.btn-close {
+	padding-right: 4.375rem
+}
+
+.modal-cookie .btn.icon-right:after, .modal-cookie .icon-right.btn-close:after {
+	right: 2.5rem
+}
+
+@keyframes a {
+	0% {
+		transform: rotate(0)
+	}
+	to {
+		transform: rotate(359deg)
+	}
+}
+
+.modal-cookie .btn-icon {
+	height: 2.5rem;
+	width: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0
+}
+
+.modal-cookie .btn-icon:after {
+	left: 50%;
+	transform: translate(-50%)
+}
+
+.modal-cookie .btn + .btn, .modal-cookie .btn + .btn-close, .modal-cookie .btn-close + .btn, .modal-cookie .btn-close + .btn-close {
+	margin-left: 1rem
+}
+
+.modal-cookie .btn-close, .modal-cookie .btn-primary {
+	color: #fff;
+	background-color: #64a8f0;
+	border: 2px solid #64a8f0
+}
+
+.modal-cookie .btn-close:hover, .modal-cookie .btn-primary:hover {
+	color: #fff
+}
+
+.modal-cookie .btn-close:focus, .modal-cookie .btn-primary:focus {
+	border-color: #00448c
+}
+
+.modal-cookie .btn-close span, .modal-cookie .btn-primary span {
+	color: #fff
+}
+
+.modal-cookie .btn-secondary {
+	color: #64a8f0;
+	background-color: #fff;
+	border: 2px solid #64a8f0
+}
+
+.modal-cookie .btn-secondary:hover {
+	color: #64a8f0
+}
+
+.modal-cookie .btn-secondary:focus {
+	border-color: #00448c
+}
+
+.modal-cookie .btn-secondary:before {
+	content: "";
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	top: -1px;
+	left: -1px;
+	border: 1px solid #fff;
+	position: absolute;
+	z-index: 2
+}
+
+.modal-cookie .btn-secondary:focus:before {
+	display: none
+}
+
+.modal-cookie .btn-secondary.icon-basket:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2364A8F0'%3E%3Cpath d='M8.353 19.697C7.055 19.697 6 18.746 6 17.576s1.055-2.121 2.353-2.121c1.298 0 2.353.95 2.353 2.12 0 1.17-1.055 2.122-2.353 2.122zm0-3.182c-.648 0-1.177.476-1.177 1.06 0 .585.529 1.061 1.177 1.061s1.176-.476 1.176-1.06c0-.585-.528-1.06-1.176-1.06zm8 3.182c-1.298 0-2.353-.951-2.353-2.121s1.055-2.121 2.353-2.121c1.298 0 2.353.95 2.353 2.12 0 1.17-1.055 2.122-2.353 2.122zm0-3.182c-.648 0-1.177.476-1.177 1.06 0 .585.529 1.061 1.177 1.061s1.176-.476 1.176-1.06c0-.585-.528-1.06-1.176-1.06zm3.105-13.898c-.296-.315-.742-.496-1.223-.496H3.832l-.117-.632C3.561.654 2.705 0 1.765 0H.588C.264 0 0 .238 0 .53c0 .293.264.53.588.53h1.177c.36 0 .73.283.79.604L4.52 12.3c.154.834 1.01 1.489 1.95 1.489h11.765c.325 0 .589-.238.589-.53 0-.293-.264-.53-.589-.53H6.471c-.362 0-.731-.283-.79-.604l-.29-1.57 11.723-.92c.912-.07 1.745-.764 1.895-1.579l.79-4.27a1.336 1.336 0 0 0-.34-1.17l-.001.002zm-.82.993l-.79 4.271c-.062.336-.46.667-.836.697l-11.816.926-1.169-6.323h14.207c.138 0 .253.042.325.12.072.077.1.186.077.308l.002.001z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn-secondary.icon-download:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 18' fill='%2364A8F0'%3E%3Cpath d='M15.838 7.93a.566.566 0 0 0-.771 0l-4.523 4.3V.519A.533.533 0 0 0 10 0a.533.533 0 0 0-.546.519v11.71L4.931 7.93a.566.566 0 0 0-.771 0 .501.501 0 0 0 0 .733l5.454 5.186A.558.558 0 0 0 10 14c.14 0 .28-.05.386-.152l5.454-5.186a.501.501 0 0 0 0-.733l-.002.001z'/%3E%3Cpath d='M18.421 18H1.58C.709 18 0 17.327 0 16.5v-2c0-.276.236-.5.526-.5.29 0 .527.224.527.5v2c0 .276.235.5.526.5H18.42c.29 0 .526-.224.526-.5v-2c0-.276.236-.5.527-.5.29 0 .526.224.526.5v2c0 .827-.708 1.5-1.579 1.5z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn-danger {
+	color: #fff;
+	background-color: #e2161c;
+	border: 2px solid #e2161c
+}
+
+.modal-cookie .btn-danger:hover {
+	color: #fff
+}
+
+.modal-cookie .btn-danger:focus {
+	border-color: #00448c
+}
+
+.modal-cookie .btn-black {
+	color: #fff;
+	background-color: #000;
+	border: 2px solid #000
+}
+
+.modal-cookie .btn-black:hover {
+	color: #fff
+}
+
+.modal-cookie .btn-black:focus {
+	border-color: #64a8f0
+}
+
+.modal-cookie .btn-white {
+	color: rgba(0, 0, 0, .7);
+	background-color: #fff;
+	border: 2px solid #fff
+}
+
+.modal-cookie .btn-white:hover {
+	color: rgba(0, 0, 0, .7)
+}
+
+.modal-cookie .btn-white:focus {
+	border-color: #64a8f0
+}
+
+.modal-cookie .btn-white.icon-basket:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2300448C'%3E%3Cpath d='M8.353 19.697C7.055 19.697 6 18.746 6 17.576s1.055-2.121 2.353-2.121c1.298 0 2.353.95 2.353 2.12 0 1.17-1.055 2.122-2.353 2.122zm0-3.182c-.648 0-1.177.476-1.177 1.06 0 .585.529 1.061 1.177 1.061s1.176-.476 1.176-1.06c0-.585-.528-1.06-1.176-1.06zm8 3.182c-1.298 0-2.353-.951-2.353-2.121s1.055-2.121 2.353-2.121c1.298 0 2.353.95 2.353 2.12 0 1.17-1.055 2.122-2.353 2.122zm0-3.182c-.648 0-1.177.476-1.177 1.06 0 .585.529 1.061 1.177 1.061s1.176-.476 1.176-1.06c0-.585-.528-1.06-1.176-1.06zm3.105-13.898c-.296-.315-.742-.496-1.223-.496H3.832l-.117-.632C3.561.654 2.705 0 1.765 0H.588C.264 0 0 .238 0 .53c0 .293.264.53.588.53h1.177c.36 0 .73.283.79.604L4.52 12.3c.154.834 1.01 1.489 1.95 1.489h11.765c.325 0 .589-.238.589-.53 0-.293-.264-.53-.589-.53H6.471c-.362 0-.731-.283-.79-.604l-.29-1.57 11.723-.92c.912-.07 1.745-.764 1.895-1.579l.79-4.27a1.336 1.336 0 0 0-.34-1.17l-.001.002zm-.82.993l-.79 4.271c-.062.336-.46.667-.836.697l-11.816.926-1.169-6.323h14.207c.138 0 .253.042.325.12.072.077.1.186.077.308l.002.001z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn-white.icon-download:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 18' fill='%2300448C'%3E%3Cpath d='M15.838 7.93a.566.566 0 0 0-.771 0l-4.523 4.3V.519A.533.533 0 0 0 10 0a.533.533 0 0 0-.546.519v11.71L4.931 7.93a.566.566 0 0 0-.771 0 .501.501 0 0 0 0 .733l5.454 5.186A.558.558 0 0 0 10 14c.14 0 .28-.05.386-.152l5.454-5.186a.501.501 0 0 0 0-.733l-.002.001z'/%3E%3Cpath d='M18.421 18H1.58C.709 18 0 17.327 0 16.5v-2c0-.276.236-.5.526-.5.29 0 .527.224.527.5v2c0 .276.235.5.526.5H18.42c.29 0 .526-.224.526-.5v-2c0-.276.236-.5.527-.5.29 0 .526.224.526.5v2c0 .827-.708 1.5-1.579 1.5z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .btn-close {
+	padding: 0;
+	height: 2.5rem;
+	width: 2.5rem;
+	background: #64a8f0 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.87 8l6.95-6.949a.617.617 0 0 0-.871-.871L8 7.13 1.051.18a.617.617 0 0 0-.871.871l6.95 6.95-6.95 6.948a.617.617 0 0 0 .871.871L8 8.87l6.949 6.95a.618.618 0 0 0 .871 0 .617.617 0 0 0 0-.871L8.87 8z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%;
+	background-size: 1.25rem;
+	border: none
+}
+
+.modal-cookie .btn-block {
+	width: 100%
+}
+
+.modal-cookie .btn-loading {
+	position: relative;
+	text-indent: -9999px
+}
+
+.modal-cookie .btn-loading:after {
+	overflow: hidden;
+	display: inline-block;
+	animation: b steps(4) .8s infinite;
+	content: "\2026";
+	width: 0;
+	position: absolute;
+	top: calc(50% - 1rem);
+	left: calc(50% - .5rem);
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	text-indent: 0
+}
+
+@keyframes b {
+	to {
+		width: 2rem
+	}
+}
+
+.modal-cookie label {
+	display: block;
+	color: #00448c;
+	cursor: pointer
+}
+
+:disabled .modal-cookie label {
+	color: rgba(0, 0, 0, .4)
+}
+
+.modal-cookie .form-control {
+	display: block;
+	width: 100%;
+	border: 0;
+	border-bottom: 1px solid #64a8f0;
+	font-size: .875rem;
+	color: #64a8f0;
+	line-height: 1rem;
+	height: 2.5rem;
+	padding: 0 .625rem;
+	outline: 0
+}
+
+.modal-cookie .form-control:focus {
+	box-shadow: inset 0 -1px #64a8f0
+}
+
+.modal-cookie .form-control::-webkit-input-placeholder {
+	color: #64a8f0
+}
+
+.modal-cookie .form-control:-ms-input-placeholder, .modal-cookie .form-control::-ms-input-placeholder {
+	color: #64a8f0
+}
+
+.modal-cookie .form-control::placeholder {
+	color: #64a8f0
+}
+
+.modal-cookie .form-control:disabled, .modal-cookie .form-control[readonly] {
+	border-bottom: 1px dashed rgba(0, 0, 0, .4);
+	opacity: 1;
+	background-color: #fff
+}
+
+.modal-cookie textarea.form-control {
+	border: 1px solid #64a8f0;
+	min-height: 8rem;
+	padding: .625rem
+}
+
+.modal-cookie textarea.form-control:focus {
+	box-shadow: inset 0 0 0 1px #64a8f0
+}
+
+.modal-cookie textarea.form-control:disabled, .modal-cookie textarea.form-control[readonly] {
+	border: 1px dashed rgba(0, 0, 0, .4)
+}
+
+.modal-cookie .invalid-feedback, .modal-cookie .invalid-form {
+	display: none;
+	font-size: .75rem;
+	color: #e2161c;
+	padding: .3125rem 1.25rem;
+	position: relative
+}
+
+.has-danger .modal-cookie .invalid-feedback, .has-danger .modal-cookie .invalid-form {
+	display: block
+}
+
+.modal-cookie .invalid-feedback:after, .modal-cookie .invalid-form:after {
+	content: "";
+	background: transparent url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='%23E2161C'%3E%3Crect transform='rotate(-45 6 6)' x='5' y='-1' width='2' height='14' rx='1'/%3E%3Crect transform='rotate(45 6 6)' x='5' y='-1' width='2' height='14' rx='1'/%3E%3C/svg%3E") 0 0 no-repeat;
+	position: absolute;
+	right: 1.375rem;
+	top: -1.5rem;
+	width: .75rem;
+	height: .75rem
+}
+
+.modal-cookie .invalid-form {
+	display: block;
+	margin-top: 1rem
+}
+
+.modal-cookie .invalid-form:after {
+	right: auto;
+	left: 0;
+	top: 7px
+}
+
+.modal-cookie .form-group {
+	margin-bottom: 2.5rem
+}
+
+.modal-cookie legend {
+	font-size: 1rem;
+	color: #00448c
+}
+
+.modal-cookie .input-group {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	border: 1px solid #64a8f0
+}
+
+.modal-cookie .input-group label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	border: 0
+}
+
+.modal-cookie .input-group .form-control {
+	position: relative;
+	z-index: 2;
+	flex: 1 1 auto;
+	width: 1%;
+	margin-bottom: 0;
+	border: 0 none
+}
+
+.modal-cookie .input-group-addon {
+	cursor: default;
+	padding: 0 .625rem;
+	margin-bottom: 0;
+	line-height: 2.5rem;
+	color: #fff;
+	text-align: center;
+	background-color: #64a8f0;
+	border: 0 none;
+	white-space: nowrap;
+	display: flex;
+	align-items: center
+}
+
+.modal-cookie .custom-control-description {
+	font-size: .875rem;
+	line-height: 1.5rem;
+	font-weight: 400
+}
+
+.modal-cookie .custom-control {
+	position: relative;
+	padding-left: 2rem;
+	margin-right: 1rem
+}
+
+.modal-cookie .custom-control-inline {
+	display: inline-flex;
+	margin-right: 1rem
+}
+
+.modal-cookie .custom-control-input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0
+}
+
+.modal-cookie .custom-control-input:disabled ~ .custom-control-indicator {
+	background-color: #eef1f2;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 3px #eef1f2
+}
+
+.modal-cookie .custom-control-input:disabled ~ .custom-control-description {
+	color: rgba(0, 0, 0, .4)
+}
+
+.modal-cookie .custom-control-indicator {
+	position: absolute;
+	top: calc(50% - .5rem);
+	left: .25rem;
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: #fff;
+	border-radius: 50%;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 3px #64a8f0
+}
+
+.modal-cookie .custom-checkbox .custom-control-indicator {
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: 75% 75%;
+	border-radius: 0
+}
+
+.modal-cookie .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%2364A8F0' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie .custom-radio .custom-control-input:checked ~ .custom-control-indicator {
+	background-color: #64a8f0
+}
+
+.modal-cookie .custom-file {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 2.5rem;
+	margin-bottom: 0
+}
+
+.modal-cookie .custom-file-input {
+	min-width: 14rem;
+	width: 100%;
+	height: 2.5rem;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer
+}
+
+.modal-cookie .custom-file-control {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 5;
+	height: 2.5rem;
+	padding: 0 .75rem;
+	line-height: 2.5rem;
+	color: #64a8f0;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: #fff;
+	border: 1px solid #64a8f0;
+	font-size: .875rem;
+	cursor: pointer
+}
+
+.modal-cookie .custom-file-control:after {
+	content: attr(aria-label)
+}
+
+.modal-cookie .custom-file-control:before {
+	content: attr(data-button);
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	z-index: 6;
+	display: block;
+	height: 2.5rem;
+	padding: 0 .75rem;
+	color: #fff;
+	background-color: #64a8f0;
+	border: 1px solid #64a8f0;
+	font-size: .75rem;
+	font-weight: 700
+}
+
+.modal-cookie .custom-select {
+	display: block;
+	max-width: 100%;
+	height: 2.5rem;
+	padding: 0 .625rem;
+	line-height: 2.5rem;
+	color: #64a8f0;
+	vertical-align: middle;
+	border: 0;
+	border-bottom: 1px solid #64a8f0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: 0;
+	border-radius: 0;
+	width: 100%;
+	font-size: .875rem;
+	background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8' fill='%2364A8F0'%3E%3Cpath d='M.108.117a.348.348 0 0 1 .521 0L7 7.034 13.371.117a.348.348 0 0 1 .521 0 .425.425 0 0 1 0 .566l-6.632 7.2a.348.348 0 0 1-.52 0L.107.683a.424.424 0 0 1 0-.566z'/%3E%3C/svg%3E") calc(100% - 40px) 50% no-repeat;
+	background-size: 14px
+}
+
+.modal-cookie .custom-select.invert {
+	color: #fff;
+	background-color: #64a8f0;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8' fill='%23fff'%3E%3Cpath d='M.108.117a.348.348 0 0 1 .521 0L7 7.034 13.371.117a.348.348 0 0 1 .521 0 .425.425 0 0 1 0 .566l-6.632 7.2a.348.348 0 0 1-.52 0L.107.683a.424.424 0 0 1 0-.566z'/%3E%3C/svg%3E")
+}
+
+.has-danger .modal-cookie .custom-select {
+	border-bottom-color: #e2161c;
+	color: #e2161c
+}
+
+.modal-cookie select[data-ss-uuid] {
+	display: none;
+	pointer-events: none
+}
+
+.modal-cookie .style-select {
+	display: block;
+	position: relative;
+	width: 100%
+}
+
+.modal-cookie .style-select .ss-selected-option {
+	width: 100%;
+	padding: 0 10px;
+	border: 0;
+	border-bottom: 1px solid #64a8f0;
+	color: #64a8f0;
+	line-height: 2.5rem;
+	font-size: .875rem;
+	position: relative;
+	outline: 0;
+	cursor: pointer
+}
+
+.modal-cookie .style-select .ss-selected-option:after {
+	content: "";
+	position: absolute;
+	top: calc(50% - 3px);
+	right: 2.5rem;
+	display: block;
+	background: transparent url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8' fill='%2364A8F0'%3E%3Cpath d='M.108.117a.348.348 0 0 1 .521 0L7 7.034 13.371.117a.348.348 0 0 1 .521 0 .425.425 0 0 1 0 .566l-6.632 7.2a.348.348 0 0 1-.52 0L.107.683a.424.424 0 0 1 0-.566z'/%3E%3C/svg%3E") 0 0 no-repeat;
+	width: .875rem;
+	height: .875rem
+}
+
+.has-danger .modal-cookie .style-select .ss-selected-option {
+	border-bottom-color: #e2161c;
+	color: #e2161c
+}
+
+.modal-cookie .style-select .ss-dropdown {
+	display: none;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	z-index: 2;
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-height: 40vh
+}
+
+.modal-cookie .style-select .ss-dropdown .ss-option {
+	line-height: 2.5rem;
+	border-bottom: 1px solid #64a8f0;
+	padding: 0 20px;
+	color: #64a8f0;
+	font-size: .875rem;
+	cursor: pointer;
+	background-color: #fff
+}
+
+.modal-cookie .style-select .ss-dropdown .ss-option:last-child {
+	border-bottom: 0
+}
+
+.modal-cookie .style-select .ss-dropdown .ss-option.ticked {
+	font-weight: 700
+}
+
+.modal-cookie .style-select.open .ss-dropdown, .modal-cookie .style-select.open .ss-selected-option {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1)
+}
+
+.modal-cookie .style-select.open .ss-dropdown {
+	display: block
+}
+
+.modal-cookie .style-select.open .ss-selected-option {
+	background-color: #64a8f0;
+	color: #fff;
+	font-weight: 700;
+	padding: 0 20px
+}
+
+.modal-cookie .style-select.open .ss-selected-option:after {
+	background: transparent url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'%3E%3Cpath d='M14 7.6a.42.42 0 0 1-.108.283.348.348 0 0 1-.521 0L7 .966.629 7.883a.348.348 0 0 1-.521 0 .425.425 0 0 1 0-.566L6.74.117a.348.348 0 0 1 .52 0l6.632 7.2a.415.415 0 0 1 .108.284V7.6z' fill='%23FFF'/%3E%3C/svg%3E") 0 0 no-repeat
+}
+
+.has-danger .modal-cookie .style-select.open .ss-selected-option {
+	border-bottom-color: #64a8f0
+}
+
+.modal-cookie staedtler-select.invert .style-select {
+	background-color: #64a8f0
+}
+
+.modal-cookie staedtler-select.invert .style-select .ss-selected-option {
+	color: #fff;
+	border-color: #64a8f0
+}
+
+.modal-cookie staedtler-select.invert .style-select .ss-selected-option:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8' fill='%23fff'%3E%3Cpath d='M.108.117a.348.348 0 0 1 .521 0L7 7.034 13.371.117a.348.348 0 0 1 .521 0 .425.425 0 0 1 0 .566l-6.632 7.2a.348.348 0 0 1-.52 0L.107.683a.424.424 0 0 1 0-.566z'/%3E%3C/svg%3E")
+}
+
+.modal-cookie staedtler-select.invert .style-select.open .ss-selected-option:after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'%3E%3Cpath d='M14 7.6a.42.42 0 0 1-.108.283.348.348 0 0 1-.521 0L7 .966.629 7.883a.348.348 0 0 1-.521 0 .425.425 0 0 1 0-.566L6.74.117a.348.348 0 0 1 .52 0l6.632 7.2a.415.415 0 0 1 .108.284V7.6z' fill='%23FFF'/%3E%3C/svg%3E")
+}
+
+.modal-cookie staedtler-select.invert .custom-select {
+	color: #fff;
+	border-color: #64a8f0;
+	background-color: #64a8f0;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8' fill='%23fff'%3E%3Cpath d='M.108.117a.348.348 0 0 1 .521 0L7 7.034 13.371.117a.348.348 0 0 1 .521 0 .425.425 0 0 1 0 .566l-6.632 7.2a.348.348 0 0 1-.52 0L.107.683a.424.424 0 0 1 0-.566z'/%3E%3C/svg%3E");
+	padding: 0 1.25rem
+}
+
+.modal-cookie .form-success {
+	text-align: center
+}
+
+.modal-cookie .form-success h1, .modal-cookie .form-success p, .modal-cookie .form-success svg {
+	margin-bottom: 1.5rem
+}
+
+.modal-cookie .grecaptcha-badge {
+	z-index: 1
+}
+
+.modal-cookie .modal-content {
+	box-shadow: none;
+	border-radius: 0;
+	border: 0 none
+}
+
+.modal {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	outline: 0
+}
+
+@media (min-width: 576px) {
+	.modal {
+		align-items: center
+	}
+}
+
+.modal-dialog {
+	position: relative;
+	width: 100%;
+	max-height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: all .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+.modal.fade .modal-dialog {
+	transform: translateY(-25%)
+}
+
+.modal.show .modal-dialog {
+	transform: translate(0)
+}
+
+.modal-dialog .btn-close {
+	position: absolute;
+	top: 0;
+	right: 0
+}
+
+@media (min-width: 576px) {
+	.modal-dialog {
+		width: 33rem
+	}
+}
+
+@media (min-width: 768px) {
+	.modal-dialog {
+		width: 42rem
+	}
+}
+
+@media (min-width: 992px) {
+	.modal-dialog {
+		width: 45rem
+	}
+}
+
+.modal-content {
+	padding: 2.5rem;
+	position: relative;
+	width: 100%;
+	pointer-events: auto;
+	background-color: #fff;
+	outline: 0
+}
+
+.modal-content :last-child {
+	margin-bottom: 0
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: rgba(0, 68, 140, .7);
+	transition: all .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+.modal-backdrop.fade:not(.show) {
+	background-color: rgba(0, 68, 140, 0)
+}
+
+.modal-cookie {
+	align-items: center
+}
+
+.modal-cookie .modal-dialog {
+	min-height: auto;
+	max-width: 35rem
+}
+
+.modal-cookie .modal-content {
+	text-align: center;
+	min-height: auto
+}
+
+.modal-cookie .modal-content h2 {
+	font-weight: 700;
+	font-size: 1.625rem
+}
+
+@media (min-width: 768px) {
+	.modal-cookie .modal-content h2 {
+		font-size: 2.25rem
+	}
+}
+
+.modal-cookie .modal-content .btn, .modal-cookie .modal-content .btn-close {
+	margin: 1rem 0;
+	display: block
+}
+
+.modal-cookie .modal-content .btn-secondary {
+	opacity: .75
+}
+
+.modal-cookie .modal-content p {
+	font-size: .875rem
+}
+
+.modal-cookie .modal-content > :last-child {
+	font-size: .75rem
+}

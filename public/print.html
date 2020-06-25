@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" moznomarginboxes>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>STAEDTLER Digital Creator - Print</title>
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" type="text/css" href="public/css/print.css">
+
+</head>
+<body>
+<!--<img class="logo" src="assets/img/staedler_print.png" >-->
+
+<div class="container">
+  <img id="image" src="" >
+</div>
+
+<!--
+<div class="advertising" id="advertising">
+  <img id="contest" src="">
+</div>
+-->
+<script>
+  function addImg(img) {
+    document.getElementById("image").src = img
+  }
+  /*
+  function addContest(lang) {
+    document.getElementById("contest").src = 'pdf/'+lang+'.jpg'
+    if ((lang == "en_us") ||
+        (lang == "de_at") ||
+        (lang == "en_au") ||
+        (lang == "en_ca") ||
+        (lang == "fr_ca") ||
+        (lang == "en_hk") ||
+        (lang == "en_my") ||
+        (lang == "en_nz") ||
+        (lang == "en_sg") ||
+        (lang == "en_th") ||
+        (lang == "en_us2") ||
+        (lang == "en_za") ||
+        (lang == "es_mx"))
+      document.getElementById("advertising").remove()
+  }
+  */
+  window.onload = function () {
+    opener.transmitImg()
+  }
+</script>
+</body>
+</html>

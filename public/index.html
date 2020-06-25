@@ -6,12 +6,138 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" href="css/nouislider.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style_new.css">
+    <link rel="stylesheet" type="text/css" href="css/mandalator.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/cookie-banner.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/print.css">
+    <script>(function(e,d,c,h){var k=function(){function b(){this._cookieLifetime=365;this._cookieName="staedtler-consent";this._consentSettings={essential:!0,statistic:!1,marketing:!1};this._version=1;this._expires="";this._listeners=[];this._parseCookieSettings()}c.defineProperty(b.prototype,"consentSettings",{get:function(){return this._consentSettings},enumerable:!0,configurable:!0});b.prototype.updateConsentSettings=function(a){this._consentSettings=c.assign(this._consentSettings,a);this._writeCookieSettings();this._callListeners(this._listeners)};b.prototype.addListener=function(a){var b=this;this._listeners.push(a);return function(){b._listeners=b._listeners.filter(function(b){return b!==a})}};b.prototype.removeListener=function(a){this._listeners=this._listeners.filter(function(b){return b!==a})};b.prototype.openSettings=function(){d.querySelector("staedtler-cookie-banner").open()};c.defineProperty(b.prototype,"hasCookie",{get:function(){return""!==this._expires},enumerable:!0,configurable:!0});c.defineProperty(b.prototype,"isEssentiaFlEnabled",{get:function(){return!0},enumerable:!0,configurable:!0});c.defineProperty(b.prototype,"isStatisticEnabled",{get:function(){return this._consentSettings.statistPPPic},enumerable:!0,configurable:!0});c.defineProperty(b.prototype,"isMarketingEnabled",{get:function(){return this._consentSettings.marketing},enumerable:!0,configurable:!0});b.prototype._callListeners=function(a){var b=this;a.forEach(function(a){return a.apply(null,[b._consentSettings])})};b.prototype._writeCookieSettings=function(){var a=new Date;a.setTime(a.getTime()+864E5*this._cookieLifetime);this._expires=a.toUTCString();a=h.hostname.split(".").reverse()[1]+"."+h.hostname.split(".").reverse()[0];d.cookie=this._cookieName+"="+encodeURIComponent(JSON.stringify({version:this._version,consents:this._consentSettings,expires:this._expires}))+"; expires="+this._expires+"; domain=."+a+"; path=/"};b.prototype._parseCookieSettings=function(){var a=d.cookie.split(";").reduce(function(a,b){var d,g,f=b.trim().split("=").map(decodeURIComponent),e=f[0];f=f[1];try{return c.assign(a,(d={},d[e]=JSON.parse(f),d))}catch(l){return c.assign(a,(g={},g[e]=f,g))}},{});a.hasOwnProperty(this._cookieName)&&(a=a[this._cookieName],a.hasOwnProperty("consents")&&(this._consentSettings=c.assign(this._consentSettings,a.consents)),a.hasOwnProperty("expires")&&(this._expires=a.expires),a.hasOwnProperty("version")&&this._version!==parseInt(""+a.version,10)&&this._migrateToNewVersion(parseInt(""+a.version,10)))};b.prototype._migrateToNewVersion=function(a){};return b}();e.staedtlerConsentManager=e.staedtlerConsentManager||new k})(window,document,Object,window.location);</script>
+    <script>(function(b){function e(){a.isStatisticEnabled||f.forEach(function(a){document.cookie=a+"=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=."+c+"; path=/"});a.isMarketingEnabled||g.forEach(function(a){document.cookie=a+"=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=."+c+"; path=/"})}var a=b.staedtlerConsentManager,d=a.hasCookie,f=["_ga","_gid","_gat","_gat_globalRollupDomain"],g=["ga_display_features","ga_display_features_globalrollup","fr","IDE","DSID"],c=location.hostname.split(".").reverse()[1]+"."+location.hostname.split(".").reverse()[0];a.addListener(function(){d&&(e(),b.setTimeout(function(){b.location.reload()},0));d=a.hasCookie})})(window);</script>
+    <script>
+      (function(window, document, location, analyticsGlobalRollupId){
+        window.ga = window.ga || function() {(ga.q = ga.q || []).push(arguments)};
+        ga.l = +new Date;
+        var disableStrGlobalRollupId = 'ga-disable-' + analyticsGlobalRollupId;
+        if (document.cookie.indexOf(disableStrGlobalRollupId + '=true') > -1) {
+          window[disableStrGlobalRollupId] = true;
+        }
+
+        ga('create', analyticsGlobalRollupId, 'auto', {siteSpeedSampleRate: 100, 'allowLinker': true, 'name': 'globalRollupDomain'});
+        ga('globalRollupDomain.set', 'forceSSL', true);
+        ga('globalRollupDomain.set', 'anonymizeIp', true);
+        ga('globalRollupDomain.require', 'linker', {});
+        ga('globalRollupDomain.linker:autoLink', [/^(.*)\.(staedtler|staedtler-([a-zA-Z0-9]{1,}))\.([a-z.]{2,6})$/]);
+
+        var consentManager = window['staedtlerConsentManager'];
+        function initListener() {
+          if (consentManager.isStatisticEnabled) {
+            init();
+          }
+        }
+        function init() {
+          consentManager.removeListener(initListener);
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.async = true;
+          script.src = 'https://www.google-analytics.com/analytics.js';
+          var firstScriptElement = document.getElementsByTagName('script')[0];
+          firstScriptElement.parentNode.insertBefore(script, firstScriptElement);
+        }
+
+        if (consentManager.isStatisticEnabled) {
+          init();
+        } else {
+          switch (window.location.host) {
+            case 'www.staedtler.com':
+              consentManager.addListener(initListener);
+              break;
+            case 'www.staedtler.us':
+            case 'www.staedtler.ca':
+            case 'www.staedtler.be':
+            case 'www.staedtler.com.mx':
+            case 'www.staedtler.com.hk':
+            case 'www.staedtler.com.my':
+            case 'www.staedtler.co.nz':
+            case 'www.staedtler.com.sg':
+            case 'www.staedtler.co.th':
+            case 'www.staedtler.co.za':
+            case 'www.staedtler.au':
+              init();
+              break;
+          }
+        }
+      })(window, document, window.location, 'UA-24027855-21');
+    </script>
+    <script src="https://use.typekit.net/byd4mgx.js"></script>
+    <script>
+      try {
+        Typekit.load({
+          async: true
+        });
+      } catch (e) {}
+    </script>
   </head>
-  <body>
+  <body class="dca3_body">
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <script type="text/javascript" src="https://e.staedtlercdn.com/releases/2.5.1/scripts/styleguide.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/nouislider.min.js"></script>
+    <script type="text/javascript" src="js/paper.js"></script>
+    <script type="text/javascript" src="js/print.js"></script>
+    <script type="text/javascript" src="js/mandalator.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
+    <script type="text/javascript" src="js/jspdf.debug.js"></script>
+    <script type="text/javascript" src="js/main2.js"></script>
+
+    <script>
+      (function($) {
+        switch (window.location.host) {
+          case 'www.staedtler.com':
+            var cookieBannerUrl = (window.location.href.split('mandala-creator/')[0] + '?type=1512575531');
+            $.ajax(cookieBannerUrl).done(function(data) {
+              var cookieBanner = $('<div />').append(data).find('staedtler-cookie-banner');
+              $('body').append(cookieBanner);
+            });
+            break;
+        }
+      })(jQuery)
+    </script>
+
+    <script>
+      var mandalator = "";
+
+      $(document).ready(function() {
+
+        /*
+        CANVAS
+         */
+
+
+        /*
+        CANVAS END
+         */
+
+        mandalator = new mandalatorView();
+        mandalator.init();
+
+      });
+
+      function resetStage() {
+
+        var r = confirm("Alles zurücksetzen?");
+        if (r == true) {
+
+          mandalator.resetStage();
+
+        }
+      }
+    </script>
   </body>
 </html>

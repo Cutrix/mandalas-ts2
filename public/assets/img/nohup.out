@@ -1,0 +1,2 @@
+[0612/170144.098152:ERROR:chrome_main_delegate.cc(647)] Web security may only be disabled if '--user-data-dir' is also specified with a non-default value.
+Ouverture dans une session de navigateur existante.

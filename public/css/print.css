@@ -1,0 +1,29 @@
+@page {
+    size: 21cm 29.7cm;
+    margin: 0;
+}
+
+.logo {
+	width: 15mm;
+	height: 15mm;
+}
+
+.container {
+	margin-top: 10mm;
+	text-align: center;
+}
+
+.container img {
+	max-width: 195mm;
+	max-height: 240mm;
+}
+
+.advertising { 
+  page-break-before: always;
+  page-break-after: avoid;
+}
+
+.advertising img {
+	height: 293mm;
+	width: 200mm;
+}
