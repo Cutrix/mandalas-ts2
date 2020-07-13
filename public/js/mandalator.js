@@ -788,7 +788,7 @@ var mandalatorView = function() {
 
         // image list
 
-        $.getJSON("elements.json", function(data){
+        /*$.getJSON("elements.json", function(data){
             var html = '<div class="image-items-container">';
             $.each(data, function (key,val){
                 html += '<div class="profileContainer" style="background-color: '+val.color+'">'
@@ -837,7 +837,7 @@ var mandalatorView = function() {
             });
 
 
-        });
+        });*/
         // build-Layer-list
 
         for (var i = 0; i <  m.LayersArray.length; i++){

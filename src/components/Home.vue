@@ -28,7 +28,7 @@
     <div class="vignette"></div>
 
     <div class="middiv">
-      <img class="logo" src="assets/img/staedler.svg" />
+      <!--<img class="logo" src="assets/img/staedler.svg" />-->
       <canvas id="paper" style="background:#fff; width: 800px; height: 800px;"></canvas>
     </div>
 
@@ -38,6 +38,23 @@
       </div>
       <!--papa-->
       <div class="image-select-container" id="image-select-container">
+        <div class="image-items-container" v-for="(el, index) in elements" :key="index">
+          <div class="profileContainer" :style="'background-color: '+el.color">
+            <div class="profile" v-b-toggle="'accordion-'+index">
+              <span class="profileImageContainer">               
+                <img :src="'assets/img/profileImages/'+el.img+'.jpg'">'
+              </span>
+              <span class="profileText" v-if="el.user != ''"><span>{{el.kat}}</span> <span class="username">{{el.user}}</span></span>
+              <span class="profileText" v-else><span class="username" style="color: #00458b">{{el.kat}}</span></span>
+            </div>
+
+            <b-collapse :id="'accordion-'+index">
+            <div class="image-item-container" v-for="(v, i) in el.elem" :key="i">
+              <div><a href="#" class="image-item"><img :src="'assets/elements/'+v+'.svg'" /></a></div>
+            </div>
+            </b-collapse>
+          </div>
+        </div>
       </div>
       <div class="scrollButtonDown">
         <img src="assets/img/Scroll.svg" />
@@ -377,13 +394,19 @@
 <script lang="ts">
   /* ts-ignore */
 import { Component, Prop, Vue } from "vue-property-decorator";
-
 // import * as $ from 'jquery';
+  import axios from 'axios';
 @Component
 export default class Home extends Vue {
+  private elements: Array<object> = [];
+
   mounted() {
     //this.$bvModal.show('modal-1');
     //console.log($('#image-select-container').children().get(0)
+    $('.layer-options .options-header .current-image').addClass('show');
+    axios.get('elements.json').then(s => {
+      this.elements = s.data
+    })
     const EN = {
       1: "PRINT",
       2: "DOWNLOAD",
