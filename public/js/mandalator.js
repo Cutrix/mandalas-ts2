@@ -838,7 +838,6 @@ var mandalatorView = function() {
 
 
         });
-
         // build-Layer-list
 
         for (var i = 0; i <  m.LayersArray.length; i++){
