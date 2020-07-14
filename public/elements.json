@@ -1,77 +1,590 @@
-[{
-    "kat": "Basic",
-    "img": "3",
-    "user": "",
-    "color": "transparent",
-    "elem": ["ELEMENTE-01", "ELEMENTE-05", "ELEMENTE-06", "ELEMENTE-08", "ELEMENTE-09", "ELEMENTE-12", "ELEMENTE-13", "ELEMENTE-21", "ELEMENTE-23", "ELEMENTE-29", "ELEMENTE-30", "ELEMENTE-31", "ELEMENTE-43", "ELEMENTE-47", "ELEMENTE-64"]
-},
-{
-    "kat": "Artist",
-    "img": "4",
-    "user": "@jess_melaragni",
-    "color": "#fac17e",
-    "elem": ["jess_meleragni_1", "jess_meleragni_2", "jess_meleragni_3", "jess_meleragni_4", "jess_meleragni_5", "jess_meleragni_6", "jess_meleragni_7", "jess_meleragni_8", "jess_meleragni_9", "jess_meleragni_10", "jess_meleragni_11", "jess_meleragni_12", "jess_meleragni_13", "jess_meleragni_14", "jess_meleragni_15", "jess_meleragni_16", "jess_meleragni_17", "jess_meleragni_18", "jess_meleragni_19", "jess_meleragni_20"]
-},
-{
-    "kat": "Artist",
-    "img": "5",
-    "user": "@cfnatycf.design",
-    "color": "#f28f6c",
-    "elem": ["cfnatycf.design_1","cfnatycf.design_2","cfnatycf.design_3","cfnatycf.design_4","cfnatycf.design_5","cfnatycf.design_6","cfnatycf.design_7","cfnatycf.design_8","cfnatycf.design_9","cfnatycf.design_10"]
-},
-{
-    "kat": "Artist",
-    "img": "6",
-    "user": "@creative_isi",
-    "color": "#6cbef2",
-    "elem": ["cretive_isi_1", "cretive_isi_2", "cretive_isi_3", "cretive_isi_4", "cretive_isi_5", "cretive_isi_6", "cretive_isi_7", "cretive_isi_8", "cretive_isi_9", "cretive_isi_10"]
-},
-{
-    "kat": "Artist",
-    "img": "7",
-    "user": "@drawing_in_ice",
-    "color": "#9ad88c",
-    "elem": ["drawing_in_ice_1", "drawing_in_ice_2", "drawing_in_ice_3", "drawing_in_ice_4", "drawing_in_ice_5", "drawing_in_ice_6", "drawing_in_ice_7", "drawing_in_ice_8", "drawing_in_ice_9", "drawing_in_ice_10"]
-},
-{
-    "kat": "Artist",
-    "img": "8",
-    "user": "@endofourcomfortzone",
-    "color": "#9b8de6",
-    "elem": ["endofourcomfortzone_1", "endofourcomfortzone_2", "endofourcomfortzone_3", "endofourcomfortzone_4", "endofourcomfortzone_5", "endofourcomfortzone_6", "endofourcomfortzone_7", "endofourcomfortzone_8", "endofourcomfortzone_9", "endofourcomfortzone_10"]
-},
-{
-    "kat": "Artist",
-    "img": "9",
-    "user": "@liam_draws123",
-    "color": "#ac9569",
-    "elem": ["liam_draws123_1", "liam_draws123_2", "liam_draws123_3", "liam_draws123_4", "liam_draws123_5", "liam_draws123_6", "liam_draws123_7", "liam_draws123_8", "liam_draws123_9", "liam_draws123_10"]
-},
-{
-    "kat": "Artist",
-    "img": "10",
-    "user": "@MarianneBalk",
-    "color": "#f9614d",
-    "elem": ["MarianneBalk_1", "MarianneBalk_2", "MarianneBalk_3", "MarianneBalk_4", "MarianneBalk_5", "MarianneBalk_6", "MarianneBalk_7", "MarianneBalk_8", "MarianneBalk_9", "MarianneBalk_10"]
-},
-{
-    "kat": "Artist",
-    "img": "11",
-    "user": "@sine_art",
-    "color": "#637abc",
-    "elem": ["sine_art_1", "sine_art_2", "sine_art_3", "sine_art_4", "sine_art_5", "sine_art_6", "sine_art_7", "sine_art_8", "sine_art_9", "sine_art_10"]
-},
-{
-    "kat": "Artist",
-    "img": "12",
-    "user": "@Theart.inst",
-    "color": "#daa774",
-    "elem": ["Theart.inst_1", "Theart.inst_2", "Theart.inst_3", "Theart.inst_4", "Theart.inst_5", "Theart.inst_6", "Theart.inst_7", "Theart.inst_8", "Theart.inst_9", "Theart.inst_10"]
-},
-{
-    "kat": "Artist",
-    "img": "13",
-    "user": "@lilz_art",
-    "color": "#6cbef2",
-    "elem": ["lilz_art_1", "lilz_art_2", "lilz_art_3", "lilz_art_4", "lilz_art_5", "lilz_art_6", "lilz_art_7", "lilz_art_8", "lilz_art_9", "lilz_art_10"]
-}]
+[
+    {
+        "kat": "Basic",
+        "img": "3",
+        "user": "",
+        "color": "transparent",
+        "elem": [
+            {
+                "replicable": true,
+                "value": "ELEMENTE-01"
+            },
+            {
+                "replicable": false,
+                "value": "ELEMENTE-05"
+            },
+            {
+                "replicable": false,
+                "value": "ELEMENTE-06"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-08"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-09"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-12"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-13"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-21"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-23"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-29"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-30"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-31"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-43"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-47"
+            },
+            {
+                "replicable": true,
+                "value": "ELEMENTE-64"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "4",
+        "user": "@jess_melaragni",
+        "color": "#fac17e",
+        "elem": [
+            {
+                "replicable": false,
+                "value": "jess_meleragni_1"
+            },
+            {
+                "replicable": false,
+                "value": "jess_meleragni_2"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_3"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_4"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_5"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_6"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_7"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_8"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_9"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_10"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_11"
+            },
+            {
+                "replicable": false,
+                "value": "jess_meleragni_12"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_13"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_14"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_15"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_16"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_17"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_18"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_19"
+            },
+            {
+                "replicable": true,
+                "value": "jess_meleragni_20"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "5",
+        "user": "@cfnatycf.design",
+        "color": "#f28f6c",
+        "elem": [
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_1"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_2"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_3"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_4"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_5"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_6"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_7"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_8"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_9"
+            },
+            {
+                "replicable": true,
+                "value": "cfnatycf.design_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "6",
+        "user": "@creative_isi",
+        "color": "#6cbef2",
+        "elem": [
+            {
+                "replicable": false,
+                "value": "cretive_isi_1"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_2"
+            },
+            {
+                "replicable": false,
+                "value": "cretive_isi_3"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_4"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_5"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_6"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_7"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_8"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_9"
+            },
+            {
+                "replicable": true,
+                "value": "cretive_isi_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "7",
+        "user": "@drawing_in_ice",
+        "color": "#9ad88c",
+        "elem": [
+            {
+                "replicable": false,
+                "value": "drawing_in_ice_1"
+            },
+            {
+                "replicable": false,
+                "value": "drawing_in_ice_2"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_3"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_4"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_5"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_6"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_7"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_8"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_9"
+            },
+            {
+                "replicable": true,
+                "value": "drawing_in_ice_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "8",
+        "user": "@endofourcomfortzone",
+        "color": "#9b8de6",
+        "elem": [
+            {
+                "replicable": false,
+                "value": "endofourcomfortzone_1"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_2"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_3"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_4"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_5"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_6"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_7"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_8"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_9"
+            },
+            {
+                "replicable": true,
+                "value": "endofourcomfortzone_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "9",
+        "user": "@liam_draws123",
+        "color": "#ac9569",
+        "elem": [
+            {
+                "replicable": true,
+                "value": "liam_draws123_1"
+            },
+            {
+                "replicable": true,
+                "value": "liam_draws123_2"
+            },
+            {
+                "replicable": false,
+                "value": "liam_draws123_3"
+            },
+            {
+                "replicable": true,
+                "value": "liam_draws123_4"
+            },
+            {
+                "replicable": true,
+                "value": "liam_draws123_5"
+            },
+            {
+                "replicable": true,
+                "value": "liam_draws123_6"
+            },
+            {
+                "replicable": true,
+                "value": "liam_draws123_7"
+            },
+            {
+                "replicable": true,
+                "value": "liam_draws123_8"
+            },
+            {
+                "replicable": true,
+                "value": "liam_draws123_9"
+            },
+            {
+                "replicable": false,
+                "value": "liam_draws123_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "10",
+        "user": "@MarianneBalk",
+        "color": "#f9614d",
+        "elem": [
+            {
+                "replicable": true,
+                "value": "MarianneBalk_1"
+            },
+            {
+                "replicable": true,
+                "value": "MarianneBalk_2"
+            },
+            {
+                "replicable": true,
+                "value": "MarianneBalk_3"
+            },
+            {
+                "replicable": true,
+                "value": "MarianneBalk_4"
+            },
+            {
+                "replicable": false,
+                "value": "MarianneBalk_5"
+            },
+            {
+                "replicable": true,
+                "value": "MarianneBalk_6"
+            },
+            {
+                "replicable": false,
+                "value": "MarianneBalk_7"
+            },
+            {
+                "replicable": true,
+                "value": "MarianneBalk_8"
+            },
+            {
+                "replicable": true,
+                "value": "MarianneBalk_9"
+            },
+            {
+                "replicable": true,
+                "value": "MarianneBalk_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "11",
+        "user": "@sine_art",
+        "color": "#637abc",
+        "elem": [
+            {
+                "replicable": true,
+                "value": "sine_art_1"
+            },
+            {
+                "replicable": false,
+                "value": "sine_art_2"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_3"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_4"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_5"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_6"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_7"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_8"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_9"
+            },
+            {
+                "replicable": true,
+                "value": "sine_art_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "12",
+        "user": "@Theart.inst",
+        "color": "#daa774",
+        "elem": [
+            {
+                "replicable": true,
+                "value": "Theart.inst_1"
+            },
+            {
+                "replicable": false,
+                "value": "Theart.inst_2"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_3"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_4"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_5"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_6"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_7"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_8"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_9"
+            },
+            {
+                "replicable": true,
+                "value": "Theart.inst_10"
+            }
+        ]
+    },
+    {
+        "kat": "Artist",
+        "img": "13",
+        "user": "@lilz_art",
+        "color": "#6cbef2",
+        "elem": [
+            {
+                "replicable": false,
+                "value": "lilz_art_1"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_2"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_3"
+            },
+            {
+                "replicable": false,
+                "value": "lilz_art_4"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_5"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_6"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_7"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_8"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_9"
+            },
+            {
+                "replicable": true,
+                "value": "lilz_art_10"
+            }
+        ]
+    }
+]

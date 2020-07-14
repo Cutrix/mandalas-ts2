@@ -47,7 +47,8 @@
             <b-collapse :id="'accordion-'+index">
             <div class="image-item-container" v-for="(v, i) in el.elem" :key="i">
               <!-- Creer des directives pour marquer des elements comme replicable -->
-              <div style="color: transparent"><a href="#" class="image-item"><img :src="'assets/elements/'+v+'.svg'" :style="{isReplicable: 'background-color: transparent'}" v-motif-type-directive.isReplicable="index+'~'+i"/></a></div>
+              <div v-if="!v.replicable"><a href="#" class="image-item"><img :src="'assets/elements/'+v.value+'.svg'" style="background-color: transparent" /></a></div>
+              <div v-else><a href="#" class="image-item"><img :src="'assets/elements/'+v.value+'.svg'"/></a></div>
             </div>
             </b-collapse>
           </div>
