@@ -46,7 +46,8 @@
 
             <b-collapse :id="'accordion-'+index">
             <div class="image-item-container" v-for="(v, i) in el.elem" :key="i">
-              <div style="color: transparent"><a href="#" class="image-item"><img :src="'assets/elements/'+v+'.svg'" /></a></div>
+              <!-- Creer des directives pour marquer des elements comme replicable -->
+              <div style="color: transparent"><a href="#" class="image-item"><img :src="'assets/elements/'+v+'.svg'" :style="{isReplicable: 'background-color: transparent'}" v-motif-type-directive.isReplicable="index+'~'+i"/></a></div>
             </div>
             </b-collapse>
           </div>
@@ -389,12 +390,22 @@
 
 <script lang="ts">
 import axios from "axios";
+import motifTypeDirective from '@/directives/motif-type';
   /* ts-ignore */
 import { Component, Prop, Vue } from "vue-property-decorator";
 import $ from 'jquery';
-@Component
+@Component({
+  directives: {
+    motifTypeDirective
+  }
+})
 export default class Home extends Vue {
+  constructor() {
+    super();
+    this.isReplicable = false;
+  }
   private elements: object[] = [];
+  private isReplicable: boolean;
 
   public mounted() {
     $(".layer-options .options-header .current-image").addClass("show");
