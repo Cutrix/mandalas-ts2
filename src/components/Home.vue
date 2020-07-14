@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-modal id="modal-1">
-      <p class="my-4">Hello from modal!</p>
-    </b-modal>
-
     <div class="mobile-menu-button mobile">
       <i class="fa fa-bars"></i> MENU
     </div>
@@ -392,21 +388,20 @@
 </template>
 
 <script lang="ts">
+import axios from "axios";
   /* ts-ignore */
 import { Component, Prop, Vue } from "vue-property-decorator";
-// import * as $ from 'jquery';
-  import axios from 'axios';
+import $ from 'jquery';
 @Component
 export default class Home extends Vue {
-  private elements: Array<object> = [];
+  private elements: object[] = [];
 
-  mounted() {
-    //this.$bvModal.show('modal-1');
-    //console.log($('#image-select-container').children().get(0)
-    $('.layer-options .options-header .current-image').addClass('show');
-    axios.get('elements.json').then(s => {
-      this.elements = s.data
-    })
+  public mounted() {
+    $(".layer-options .options-header .current-image").addClass("show");
+    // this.$bvModal.show('modal-1');
+    axios.get("elements.json").then((s) => {
+      this.elements = s.data;
+    });
     const EN = {
       1: "PRINT",
       2: "DOWNLOAD",
