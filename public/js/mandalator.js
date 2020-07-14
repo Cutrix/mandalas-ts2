@@ -965,7 +965,7 @@ var mandalatorView = function() {
         });
 
         // update image
-
+*/
         $(document).on('click', '.image-select-container a.image-item', function(){
 
             var newimage = $(this).find('img').attr('src');
