@@ -46,7 +46,7 @@
 
             <b-collapse :id="'accordion-'+index">
             <div class="image-item-container" v-for="(v, i) in el.elem" :key="i">
-              <div><a href="#" class="image-item"><img :src="'assets/elements/'+v+'.svg'" /></a></div>
+              <div style="color: transparent"><a href="#" class="image-item"><img :src="'assets/elements/'+v+'.svg'" /></a></div>
             </div>
             </b-collapse>
           </div>
@@ -238,13 +238,13 @@
       </div>
       </div>
     </div>    
-    <!--<div class="tut1 translate animated" data-id="20"></div>-->
-    <!--<div class="tut2 translate animated hidden" data-id="21"></div>-->
-    <!--<div class="tut3 translate animated hidden" data-id="22"></div>-->
-    <!--<div class="tut3-mobile translate animated hidden" data-id="24"></div>-->
-    <!--<div class="layers-list desktop">
+    <div class="tut1 translate animated" data-id="20"></div>
+    <div class="tut2 translate animated hidden" data-id="21"></div>
+    <div class="tut3 translate animated hidden" data-id="22"></div>
+    <div class="tut3-mobile translate animated hidden" data-id="24"></div>
+    <div class="layers-list desktop">
       <div class="wrapper">
-        <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Au commencement" id="layer-1">
+        <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Pour commencez, choisissez un motif en cliquant sur un carré" id="layer-2">
           <a href="#" class="select-layer" data-rel="5">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_1.svg" />
@@ -367,7 +367,7 @@
           </a>
         </div>
       </div>
-    </div>-->
+    </div>
 
     <!--<div class="blueButtons desktop">
       <div class="tut4 translate animated hidden" data-id="23"></div>

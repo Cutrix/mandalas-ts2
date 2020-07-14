@@ -1234,7 +1234,7 @@ var mandalatorView = function() {
         m.paper.project.layers = m.paper.project.layers.reverse();
 
         var logo = new m.paper.Layer()
-        m.paper.project.importSVG('assets/img/staedler.svg',function(item){
+        m.paper.project.importSVG('',function(item){
             var symbol = new m.paper.Symbol(item)
             var size = m.paper.view.size.width/10
             // first place it to get the dimension
