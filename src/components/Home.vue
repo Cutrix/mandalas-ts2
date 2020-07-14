@@ -24,7 +24,7 @@
     <div class="vignette"></div>
 
     <div class="middiv">
-      <img class="logo" src="assets/img/staedler.svg" />
+      <!--<img class="logo" src="assets/img/staedler.svg" />-->
       <canvas id="paper" style="background:#fff; width: 800px; height: 800px;"></canvas>
     </div>
 
@@ -32,7 +32,25 @@
       <div class="scrollButtonUp hidden">
         <img src="assets/img/Scroll.svg" />
       </div>
+      <!--papa-->
       <div class="image-select-container" id="image-select-container">
+        <div class="image-items-container" v-for="(el, index) in elements" :key="index">
+          <div class="profileContainer" :style="'background-color: '+el.color">
+            <div class="profile" v-b-toggle="'accordion-'+index">
+              <span class="profileImageContainer">               
+                <img :src="'assets/img/profileImages/'+el.img+'.jpg'">'
+              </span>
+              <span class="profileText" v-if="el.user != ''"><span>{{el.kat}}</span> <span class="username">{{el.user}}</span></span>
+              <span class="profileText" v-else><span class="username" style="color: #00458b">{{el.kat}}</span></span>
+            </div>
+
+            <b-collapse :id="'accordion-'+index">
+            <div class="image-item-container" v-for="(v, i) in el.elem" :key="i">
+              <div style="color: transparent"><a href="#" class="image-item"><img :src="'assets/elements/'+v+'.svg'" /></a></div>
+            </div>
+            </b-collapse>
+          </div>
+        </div>
       </div>
       <div class="scrollButtonDown">
         <img src="assets/img/Scroll.svg" />
@@ -200,13 +218,33 @@
       </div>
 
     </div>
+
+    <div style="float: right; height: 900px; width: 150px; background-color: #756049">
+      <h2 class="text-white text-center">Calques</h2>
+      <div>    
+</div>
+      <div class="layers-list desktop">
+      <div class="wrapper">
+        <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Au commencement" id="layer-1">
+          <a href="#" class="select-layer" data-rel="5">
+            <div class="border">
+              <img class="default ringIcon" src="assets/img/Icon_ring_1.svg" />
+              <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_1.svg" />
+              <span class="ringNr">1</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      </div>
+    </div>    
     <div class="tut1 translate animated" data-id="20"></div>
     <div class="tut2 translate animated hidden" data-id="21"></div>
     <div class="tut3 translate animated hidden" data-id="22"></div>
     <div class="tut3-mobile translate animated hidden" data-id="24"></div>
     <div class="layers-list desktop">
       <div class="wrapper">
-        <div class="layer-list-item" data-rel="5">
+        <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Pour commencez, choisissez un motif en cliquant sur un carré" id="layer-2">
           <a href="#" class="select-layer" data-rel="5">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_1.svg" />
@@ -331,7 +369,7 @@
       </div>
     </div>
 
-    <div class="blueButtons desktop">
+    <!--<div class="blueButtons desktop">
       <div class="tut4 translate animated hidden" data-id="23"></div>
 
       <div class="blueButton print">
@@ -345,18 +383,25 @@
       <div class="blueButton reset">
         <span class="blueButtonContainer"><i class="fa fa-trash icon" aria-hidden="true"></i> <span class="translate" data-id="4"></span></span>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
-
 <script lang="ts">
+import axios from "axios";
   /* ts-ignore */
 import { Component, Prop, Vue } from "vue-property-decorator";
-// import * as $ from 'jquery';
+import $ from 'jquery';
 @Component
 export default class Home extends Vue {
-  private mounted() {
+  private elements: object[] = [];
+
+  public mounted() {
+    $(".layer-options .options-header .current-image").addClass("show");
+    // this.$bvModal.show('modal-1');
+    axios.get("elements.json").then((s) => {
+      this.elements = s.data;
+    });
     const EN = {
       1: "PRINT",
       2: "DOWNLOAD",

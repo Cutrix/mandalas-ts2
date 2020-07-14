@@ -788,7 +788,7 @@ var mandalatorView = function() {
 
         // image list
 
-        $.getJSON("elements.json", function(data){
+        /*$.getJSON("elements.json", function(data){
             var html = '<div class="image-items-container">';
             $.each(data, function (key,val){
                 html += '<div class="profileContainer" style="background-color: '+val.color+'">'
@@ -838,7 +838,6 @@ var mandalatorView = function() {
 
 
         });
-
         // build-Layer-list
 
         for (var i = 0; i <  m.LayersArray.length; i++){
@@ -966,7 +965,7 @@ var mandalatorView = function() {
         });
 
         // update image
-
+*/
         $(document).on('click', '.image-select-container a.image-item', function(){
 
             var newimage = $(this).find('img').attr('src');
@@ -1235,7 +1234,7 @@ var mandalatorView = function() {
         m.paper.project.layers = m.paper.project.layers.reverse();
 
         var logo = new m.paper.Layer()
-        m.paper.project.importSVG('assets/img/staedler.svg',function(item){
+        m.paper.project.importSVG('',function(item){
             var symbol = new m.paper.Symbol(item)
             var size = m.paper.view.size.width/10
             // first place it to get the dimension
