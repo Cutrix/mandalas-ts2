@@ -47,8 +47,8 @@
             <b-collapse :id="'accordion-'+index">
             <div class="image-item-container" v-for="(v, i) in el.elem" :key="i">
               <!-- Creer des directives pour marquer des elements comme replicable -->
-              <div v-if="!v.replicable"><a href="#" class="image-item"><img :src="'assets/elements/'+v.value+'.svg'" style="background-color: transparent" /></a></div>
-              <div v-else><a href="#" class="image-item"><img :src="'assets/elements/'+v.value+'.svg'"/></a></div>
+              <div v-if="v.replicable"><a href="#" class="image-item"><img :src="'assets/elements/'+v.value+'.svg'" /></a></div>
+              <div v-else><a href="#" class="image-item" @click="onImageItemClick(v.value, v.replicable)"><img :src="'assets/elements/'+v.value+'.svg'" style="background-color: transparent"/></a></div>
             </div>
             </b-collapse>
           </div>
@@ -64,8 +64,8 @@
           <div class="current-image"></div>
           <h2 class="element-name"><span class="translate" data-id="15"></span> <span class="layerNumber"></span></h2>
         </div>
-        <p class="settingsText"><span class="xitems">x</span> <span class="translate" data-id="11"></span></p>
-        <div class="settings">
+        <p class="settingsText" v-if="!newImageIsReplicable"><span class="xitems">x</span> <span class="translate" data-id="11" v-if=""></span></p>
+        <div class="settings" v-if="!newImageIsReplicable">
           <a href="#" class="count_less bLeft"><img src="assets/img/Minus.svg" /></a>
           <div class="slider-wrapper">
             <div id="slider-count" class="slider-horizontal slider-horizontal_pos"></div>
@@ -135,7 +135,7 @@
       <div class="basic-image-options layer-options-tab">
         <div class="options-header">
           <div class="current-image"></div>
-          <p><span class="translate settingsText" data-id="15"></span></p>
+          <p v-if="!newImageIsReplicable"><span class="translate settingsText" data-id="15"></span></p>
         </div>
         <div class="settings">
           <table>
@@ -403,13 +403,17 @@ import $ from 'jquery';
 export default class Home extends Vue {
   constructor() {
     super();
-    this.isReplicable = false;
+    this.newImageIsReplicable = false;
   }
   private elements: object[] = [];
-  private isReplicable: boolean;
+  /*
+  les motifs
+
+   */
+  private newImageIsReplicable: boolean;
+  private newImageName: string = "";
 
   public mounted() {
-    $(".layer-options .options-header .current-image").addClass("show");
     // this.$bvModal.show('modal-1');
     axios.get("elements.json").then((s) => {
       this.elements = s.data;
@@ -484,6 +488,12 @@ export default class Home extends Vue {
           break;
       }
     });
+  }
+
+  public onImageItemClick(image: string, replicable: boolean): void {
+    this.newImageIsReplicable = !replicable;
+    this.newImageName = image;
+    console.log('image = '+image+ ' a comme replication '+replicable)
   }
 }
 </script>

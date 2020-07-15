@@ -966,9 +966,10 @@ var mandalatorView = function() {
 
         // update image
 */
+        // TODO current: je dois obteir l'image actuellement selectionne
         $(document).on('click', '.image-select-container a.image-item', function(){
-
             var newimage = $(this).find('img').attr('src');
+            newImage = newimage;
             m.activeLayer.img = newimage ;   // upadte img
             $('.scrollContainer').removeClass('show');
             $('.layer-options-mobile .basic-image-options').removeClass('hidden');
@@ -1043,6 +1044,7 @@ var mandalatorView = function() {
             }else{
                 $('.scrollContainer').addClass('show');
                 $('.layer-options .options-header .current-image').addClass('show');
+                
                 $('.layer-options-mobile .basic-image-options').addClass('hidden');
                 $('.layer-options-mobile .layer-options-tabs').addClass('hidden');
             }
