@@ -688,7 +688,6 @@ var mandalatorView = function() {
             m.updateLayerOptions();
 
         }
-
     };
 
     this.updateLayerOptions = function(){

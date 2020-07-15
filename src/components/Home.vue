@@ -381,12 +381,12 @@
       <div class="blueButton download">
         <span class="blueButtonContainer"><i class="fa fa-download icon" aria-hidden="true"></i> <span class="translate" data-id="2"></span></span>
       </div>
-
+      -->
       <div class="blueButton reset">
         <span class="blueButtonContainer"><i class="fa fa-trash icon" aria-hidden="true"></i> <span class="translate" data-id="4"></span></span>
       </div>
-    </div>-->
-  </div>
+    </div>
+  <!--</div>-->
 </template>
 
 <script lang="ts">
