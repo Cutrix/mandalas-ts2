@@ -227,7 +227,7 @@
 </div>
       <div class="layers-list desktop">
       <div class="wrapper">
-        <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Au commencement" id="layer-1">
+        <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Au commencement" id="layer-1" style="border: 1px solid red">
           <a href="#" class="select-layer" data-rel="5">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_1.svg" />
@@ -235,7 +235,6 @@
               <span class="ringNr">1</span>
             </div>
           </a>
-
         </div>
       </div>
       </div>
@@ -251,7 +250,8 @@
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_1.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_1.svg" />
-              <span class="ringNr">1</span>
+              <span class="ringNr pr-2">1</span>
+              <span><i class="fa fa-eye"></i></span>
             </div>
           </a>
 
@@ -262,7 +262,8 @@
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_2.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_2.svg" />
-              <span class="ringNr">2</span>
+              <span class="ringNr pr-2">2</span>
+              <span><i class="fa fa-eye"></i></span>
             </div>
           </a>
         </div>
@@ -272,7 +273,8 @@
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_3.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_3.svg" />
-              <span class="ringNr">3</span>
+              <span class="ringNr pr-2">3</span>
+              <span><i class="fa fa-eye"></i></span>
             </div>
           </a>
         </div>
@@ -282,7 +284,8 @@
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_4.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_4.svg" />
-              <span class="ringNr">4</span>
+              <span class="ringNr pr-2">4</span>
+              <span><i class="fa fa-eye"></i></span>
             </div>
           </a>
         </div>
@@ -292,7 +295,8 @@
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_5.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_5.svg" />
-              <span class="ringNr">5</span>
+              <span class="ringNr pr-2">5</span>
+              <span><i class="fa fa-eye"></i></span>
             </div>
           </a>
         </div>
@@ -302,7 +306,8 @@
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_6.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_6.svg" />
-              <span class="ringNr">6</span>
+              <span class="ringNr pr-2">6</span>
+              <span><i class="fa fa-eye"></i></span>
             </div>
           </a>
         </div>
