@@ -506,10 +506,6 @@ export default class Home extends Vue {
     this.newImageName = image;
   }
 
-  public onHoverAddLayer(): void {
-    alert('fsfsqdqsd')
-  }
-
   public addLayer(): void {
     this.defaultNumberLayers++;
   }
