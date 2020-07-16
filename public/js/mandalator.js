@@ -353,7 +353,7 @@ $('.select-layer').on('click', function(){
 })
 
 $(function(){
-    doTranslate(EN);
+    doTranslate(FR);
 
     for (var key in langs) {
         if(window.location.href.search(langs[key].url)>0)
@@ -402,7 +402,7 @@ $(function(){
     })
 })
 
-
+//papa3
 var layerData = function(layernum, img, imgamount) {
 
   this.imgAmount = imgamount;
@@ -837,6 +837,7 @@ var mandalatorView = function() {
 
 
         });
+        */
         // build-Layer-list
 
         for (var i = 0; i <  m.LayersArray.length; i++){
@@ -964,7 +965,7 @@ var mandalatorView = function() {
         });
 
         // update image
-*/
+
 
         $('.view').each(function(index) {
             $(this).on('click', function() {
@@ -1073,10 +1074,13 @@ var mandalatorView = function() {
 
     };
 
+    //papa2
+
     this.updateLayerList = function(){
 
         var m = this;
         for (var i = 0; i <  m.LayersArray.length; i++){
+            console.log(m.LayersArray[i])
 
             if(m.LayersArray[i].emptyFlag){
 

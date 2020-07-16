@@ -64,7 +64,7 @@
           <div class="current-image"></div>
           <h2 class="element-name"><span class="translate" data-id="15"></span> <span class="layerNumber"></span></h2>
         </div>
-        <p class="settingsText" v-if="!newImageIsReplicable"><span class="xitems">x</span> <span class="translate" data-id="11" v-if=""></span></p>
+        <p class="settingsText" v-if="!newImageIsReplicable"><span class="xitems">x</span> <span class="translate" data-id="11" ></span></p>
         <div class="settings" v-if="!newImageIsReplicable">
           <a href="#" class="count_less bLeft"><img src="assets/img/Minus.svg" /></a>
           <div class="slider-wrapper">
@@ -225,7 +225,7 @@
       <h2 class="text-white text-center">Calques</h2>
       <div>    
 </div>
-      <div class="layers-list desktop">
+      <!--<div class="layers-list desktop">
       <div class="wrapper">
         <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Au commencement" id="layer-1" style="border: 1px solid red">
           <a href="#" class="select-layer" data-rel="5">
@@ -237,7 +237,7 @@
           </a>
         </div>
       </div>
-      </div>
+      </div>-->
     </div>    
     <div class="tut1 translate animated" data-id="20"></div>
     <div class="tut2 translate animated hidden" data-id="21"></div>
@@ -245,10 +245,21 @@
     <div class="tut3-mobile translate animated hidden" data-id="24"></div>
     <div class="layers-list desktop">
       <div class="wrapper">
-        <div class="layer-list-item" :data-rel="defaultNumberLayers-c" v-b-tooltip.left title="Pour commencez, choisissez un motif en cliquant sur un carré" id="layer-2"
+        <!--<div class="layer-list-item" :data-rel="defaultNumberLayers-c" v-b-tooltip.left title="Pour commencez, choisissez un motif en cliquant sur un carré"
              v-for="c in defaultNumberLayers"
         >
           <a href="#" class="select-layer" :data-rel="defaultNumberLayers-c">
+            <div class="border">
+              <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
+              <img class="activeimg ringIcon" :src="'assets/img/Icon_ring_active_'+c+'.svg'" />
+              <span class="ringNr pr-2">{{ c }}</span>
+              <span class="view"><i class="fa fa-eye"></i></span>
+            </div>
+          </a>
+        </div>-->
+
+        <div class="layer-list-item empty" :data-rel="defaultNumberLayers-c" v-for="c in defaultNumberLayers" :key="c">
+          <a href="#" class="select-layer" :data-rel="defaultNumberLayers - c">
             <div class="border">
               <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
               <img class="activeimg ringIcon" :src="'assets/img/Icon_ring_active_'+c+'.svg'" />
@@ -405,15 +416,11 @@
 
 <script lang="ts">
 import axios from "axios";
-import motifTypeDirective from '@/directives/motif-type';
+//import motifTypeDirective from '@/directives/motif-type';
   /* ts-ignore */
 import { Component, Prop, Vue } from "vue-property-decorator";
 import 'jquery';
-@Component({
-  directives: {
-    motifTypeDirective
-  }
-})
+@Component
 export default class Home extends Vue {
   constructor() {
     super();
@@ -422,7 +429,7 @@ export default class Home extends Vue {
   private elements: object[] = [];
   private newImageIsReplicable: boolean;
   private newImageName: string = "";
-  private defaultNumberLayers: number = 6;
+  private defaultNumberLayers: number = 3;
 
   private mounted() {
     // this.$bvModal.show('modal-1');
@@ -508,6 +515,7 @@ export default class Home extends Vue {
 
   public addLayer(): void {
     this.defaultNumberLayers++;
+    $(document).trigger('add-layer');
   }
 }
 </script>
