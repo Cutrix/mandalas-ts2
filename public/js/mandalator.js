@@ -965,6 +965,14 @@ var mandalatorView = function() {
 
         // update image
 */
+
+        $('.view').each(function(index) {
+            $(this).on('click', function() {
+
+            })
+        })
+
+
         // TODO current: je dois obteir l'image actuellement selectionne
         $(document).on('click', '.image-select-container a.image-item', function(){
             var newimage = $(this).find('img').attr('src');
