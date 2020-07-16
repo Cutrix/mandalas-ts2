@@ -64,7 +64,7 @@
           <div class="current-image"></div>
           <h2 class="element-name"><span class="translate" data-id="15"></span> <span class="layerNumber"></span></h2>
         </div>
-        <p class="settingsText" v-if="!newImageIsReplicable"><span class="xitems">x</span> <span class="translate" data-id="11" v-if=""></span></p>
+        <p class="settingsText" v-if="!newImageIsReplicable"><span class="xitems">x</span> <span class="translate" data-id="11" ></span></p>
         <div class="settings" v-if="!newImageIsReplicable">
           <a href="#" class="count_less bLeft"><img src="assets/img/Minus.svg" /></a>
           <div class="slider-wrapper">
@@ -225,7 +225,7 @@
       <h2 class="text-white text-center">Calques</h2>
       <div>    
 </div>
-      <div class="layers-list desktop">
+      <!--<div class="layers-list desktop">
       <div class="wrapper">
         <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Au commencement" id="layer-1" style="border: 1px solid red">
           <a href="#" class="select-layer" data-rel="5">
@@ -237,7 +237,7 @@
           </a>
         </div>
       </div>
-      </div>
+      </div>-->
     </div>    
     <div class="tut1 translate animated" data-id="20"></div>
     <div class="tut2 translate animated hidden" data-id="21"></div>
@@ -245,69 +245,89 @@
     <div class="tut3-mobile translate animated hidden" data-id="24"></div>
     <div class="layers-list desktop">
       <div class="wrapper">
-        <div class="layer-list-item" data-rel="5" v-b-tooltip.left title="Pour commencez, choisissez un motif en cliquant sur un carré" id="layer-2">
-          <a href="#" class="select-layer" data-rel="5">
+        <!--<div class="layer-list-item" :data-rel="defaultNumberLayers-c" v-b-tooltip.left title="Pour commencez, choisissez un motif en cliquant sur un carré"
+             v-for="c in defaultNumberLayers"
+        >
+          <a href="#" class="select-layer" :data-rel="defaultNumberLayers-c">
             <div class="border">
-              <img class="default ringIcon" src="assets/img/Icon_ring_1.svg" />
-              <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_1.svg" />
-              <span class="ringNr pr-2">1</span>
-              <span><i class="fa fa-eye"></i></span>
+              <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
+              <img class="activeimg ringIcon" :src="'assets/img/Icon_ring_active_'+c+'.svg'" />
+              <span class="ringNr pr-2">{{ c }}</span>
+              <span class="view"><i class="fa fa-eye"></i></span>
             </div>
           </a>
+        </div>-->
 
+        <div class="layer-list-item empty" :data-rel="defaultNumberLayers-c" v-for="c in defaultNumberLayers" :key="c">
+          <a href="#" class="select-layer" :data-rel="defaultNumberLayers - c">
+            <div class="border">
+              <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
+              <img class="activeimg ringIcon" :src="'assets/img/Icon_ring_active_'+c+'.svg'" />
+              <span class="ringNr pr-2">{{ c }}</span>
+              <span class="view"><i class="fa fa-eye"></i></span>
+            </div>
+          </a>
         </div>
 
-        <div class="layer-list-item" data-rel="4">
+        <!--<div class="layer-list-item" data-rel="4">
           <a href="#" class="select-layer" data-rel="4">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_2.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_2.svg" />
               <span class="ringNr pr-2">2</span>
-              <span><i class="fa fa-eye"></i></span>
+              <span class="view"><i class="fa fa-eye"></i></span>
             </div>
           </a>
-        </div>
+        </div>-->
 
-        <div class="layer-list-item" data-rel="3">
+        <!--<div class="layer-list-item" data-rel="3">
           <a href="#" class="select-layer" data-rel="3">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_3.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_3.svg" />
               <span class="ringNr pr-2">3</span>
-              <span><i class="fa fa-eye"></i></span>
+              <span class="view"><i class="fa fa-eye"></i></span>
             </div>
           </a>
-        </div>
+        </div>-->
 
-        <div class="layer-list-item" data-rel="2">
+        <!--<div class="layer-list-item" data-rel="2">
           <a href="#" class="select-layer" data-rel="2">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_4.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_4.svg" />
               <span class="ringNr pr-2">4</span>
-              <span><i class="fa fa-eye"></i></span>
+              <span class="view"><i class="fa fa-eye"></i></span>
             </div>
           </a>
-        </div>
+        </div>-->
 
-        <div class="layer-list-item" data-rel="1">
+        <!--<div class="layer-list-item" data-rel="1">
           <a href="#" class="select-layer" data-rel="1">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_5.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_5.svg" />
               <span class="ringNr pr-2">5</span>
-              <span><i class="fa fa-eye"></i></span>
+              <span class="view"><i class="fa fa-eye"></i></span>
             </div>
           </a>
-        </div>
+        </div>-->
 
-        <div class="layer-list-item" data-rel="0">
+        <!--<div class="layer-list-item" data-rel="0">
           <a href="#" class="select-layer" data-rel="0">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_6.svg" />
               <img class="activeimg ringIcon" src="assets/img/Icon_ring_active_6.svg" />
               <span class="ringNr pr-2">6</span>
-              <span><i class="fa fa-eye"></i></span>
+              <span class="view"><i class="fa fa-eye"></i></span>
+            </div>
+          </a>
+        </div>-->
+
+        <div class="layer-list-item empty" @click="addLayer" id="add-layer">
+          <a href="#" class="">
+            <div class="border">
+              <span class=""><i class="fa fa-plus"></i><br>Ajouter un calque</span>
             </div>
           </a>
         </div>
@@ -334,7 +354,7 @@
 
         </div>
 
-        <div class="layer-list-item" data-rel="4">
+        <!--<div class="layer-list-item" data-rel="4">
           <a href="#" class="select-layer" data-rel="4">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_2.svg" />
@@ -342,9 +362,9 @@
               <span class="ringNr">2</span>
             </div>
           </a>
-        </div>
+        </div>-->
 
-        <div class="layer-list-item" data-rel="3">
+        <!--<div class="layer-list-item" data-rel="3">
           <a href="#" class="select-layer" data-rel="3">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_3.svg" />
@@ -352,9 +372,9 @@
               <span class="ringNr">3</span>
             </div>
           </a>
-        </div>
+        </div>-->
 
-        <div class="layer-list-item" data-rel="2">
+        <!--<div class="layer-list-item" data-rel="2">
           <a href="#" class="select-layer" data-rel="2">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_4.svg" />
@@ -362,9 +382,9 @@
               <span class="ringNr">4</span>
             </div>
           </a>
-        </div>
+        </div>-->
 
-        <div class="layer-list-item" data-rel="1">
+        <!--<div class="layer-list-item" data-rel="1">
           <a href="#" class="select-layer" data-rel="1">
             <div class="border">
               <img class="default ringIcon" src="assets/img/Icon_ring_5.svg" />
@@ -372,7 +392,7 @@
               <span class="ringNr">5</span>
             </div>
           </a>
-        </div>
+        </div>-->
       </div>
     </div>
 
@@ -396,29 +416,22 @@
 
 <script lang="ts">
 import axios from "axios";
-import motifTypeDirective from '@/directives/motif-type';
+//import motifTypeDirective from '@/directives/motif-type';
   /* ts-ignore */
 import { Component, Prop, Vue } from "vue-property-decorator";
-import $ from 'jquery';
-@Component({
-  directives: {
-    motifTypeDirective
-  }
-})
+import 'jquery';
+@Component
 export default class Home extends Vue {
   constructor() {
     super();
     this.newImageIsReplicable = false;
   }
   private elements: object[] = [];
-  /*
-  les motifs
-
-   */
   private newImageIsReplicable: boolean;
   private newImageName: string = "";
+  private defaultNumberLayers: number = 3;
 
-  public mounted() {
+  private mounted() {
     // this.$bvModal.show('modal-1');
     axios.get("elements.json").then((s) => {
       this.elements = s.data;
@@ -498,11 +511,18 @@ export default class Home extends Vue {
   public onImageItemClick(image: string, replicable: boolean): void {
     this.newImageIsReplicable = !replicable;
     this.newImageName = image;
-    console.log('image = '+image+ ' a comme replication '+replicable)
+  }
+
+  public addLayer(): void {
+    this.defaultNumberLayers++;
+    $(document).trigger('add-layer');
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  #add-layer:hover {
+    background-color: #fff;
+  }
 </style>
