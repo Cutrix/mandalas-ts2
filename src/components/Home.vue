@@ -28,7 +28,7 @@
       <canvas id="paper" style="background:#fff; width: 800px; height: 800px;"></canvas>
     </div>
 
-    <div class="scrollContainer desktop">
+    <div class="scrollContainer desktop" :class="{show: scrollContainer}">
       <div class="scrollButtonUp hidden">
         <img src="assets/img/Scroll.svg" />
       </div>
@@ -58,10 +58,12 @@
         <img src="assets/img/Scroll.svg" />
       </div>
     </div>
-    <div class="layer-options tk-museo-sans-rounded desktop">
+    <div class="layer-options tk-museo-sans-rounded desktop" :class="{show: tut3}">
       <div class="basic-image-options">
         <div class="options-header">
-          <div class="current-image"></div>
+          <div class="current-image animated tada" @click="showScrollContainer">
+            <img src="assets/img/Icon_fragezeichen_active.svg" class="black">
+          </div>
           <h2 class="element-name"><span class="translate" data-id="15"></span> <span class="layerNumber"></span></h2>
         </div>
         <p class="settingsText" v-if="!newImageIsReplicable"><span class="xitems">x</span> <span class="translate" data-id="11" ></span></p>
@@ -121,7 +123,7 @@
     </div>
     <div class="layer-options-mobile tk-museo-sans-rounded mobile">
 
-      <div class="scrollContainer">
+      <div class="scrollContainer" :class="{show: scrollContainer}">
         <div class="scrollButtonUp hidden">
           <img src="assets/img/Scroll.svg" />
         </div>
@@ -259,7 +261,7 @@
         </div>-->
 
         <div class="layer-list-item empty" :data-rel="defaultNumberLayers-c" v-for="c in defaultNumberLayers" :key="c">
-          <a href="#" class="select-layer" :data-rel="defaultNumberLayers - c">
+          <a href="#" class="select-layer" :data-rel="defaultNumberLayers - c" @click="showTut3">
             <div class="border">
               <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
               <img class="activeimg ringIcon" :src="'assets/img/Icon_ring_active_'+c+'.svg'" />
@@ -425,11 +427,15 @@ export default class Home extends Vue {
   constructor() {
     super();
     this.newImageIsReplicable = false;
+    this.tut3 = false;
+    this.scrollContainer = false;
   }
   private elements: object[] = [];
   private newImageIsReplicable: boolean;
   private newImageName: string = "";
   private defaultNumberLayers: number = 3;
+  private tut3: boolean;
+  private scrollContainer:boolean;
 
   private mounted() {
     // this.$bvModal.show('modal-1');
@@ -516,6 +522,14 @@ export default class Home extends Vue {
   public addLayer(): void {
     this.defaultNumberLayers++;
     $(document).trigger('add-layer');
+  }
+
+  public showTut3() {
+    this.tut3 = !this.tut3
+  }
+
+  public showScrollContainer(): void {
+    this.scrollContainer = !this.scrollContainer;
   }
 }
 </script>

@@ -698,6 +698,7 @@ var mandalatorView = function() {
 
         $('.current-image img').remove();
         if(m.activeLayer.img != ""){
+            //Injection des images
             $('.current-image').html('<img src="'+m.activeLayer.img+'" />');
         }else{
 
@@ -965,13 +966,6 @@ var mandalatorView = function() {
         });
 
         // update image
-
-
-        $('.view').each(function(index) {
-            $(this).on('click', function() {
-
-            })
-        })
 
 
         // TODO current: je dois obteir l'image actuellement selectionne
