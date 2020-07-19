@@ -260,7 +260,7 @@
           </a>
         </div>-->
 
-        <div class="layer-list-item empty" :data-rel="defaultNumberLayers-c" v-for="c in defaultNumberLayers" :key="c">
+        <div class="layer-list-item empty" :data-rel="defaultNumberLayers-c" v-for="c in defaultNumberLayers" :key="c" @click.right="onLayerRightClick">
           <a href="#" class="select-layer" :data-rel="defaultNumberLayers - c" @click="showTut3">
             <div class="border">
               <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
@@ -438,7 +438,7 @@ export default class Home extends Vue {
   private elements: object[] = [];
   private newImageIsReplicable: boolean;
   private newImageName: string = "";
-  private defaultNumberLayers: number = 3;
+  private defaultNumberLayers: number = 6;
   private tut3: boolean;
   private scrollContainer:boolean;
   private isVisible: boolean;
@@ -549,8 +549,9 @@ export default class Home extends Vue {
     $(document).trigger('click', [{visibility: this.isVisible}]);
   }
 
-  get getViewClass() {
-    return (this.isVisible) ? 'fa fa-eye' : 'fa fa-eye-slash';
+  public onLayerRightClick(): void {
+    //alert('dix')
+
   }
 }
 </script>
