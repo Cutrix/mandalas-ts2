@@ -112,6 +112,23 @@
 
     <script>
       //var mandalator = "";
+      $(document).on('click', function(e, data) {
+        if (data.visibility !== 'undefined') {
+          if (data.visibility) {
+            $('.layer-options').hide()
+            const numLayer = localStorage.getItem('layer');
+            console.log('layer num = '+numLayer)
+            var iNumLayer = parseInt(numLayer);
+            mandalator.paper.project.layers[iNumLayer].setVisible(false)
+          } else {
+            $('.layer-options').hide()
+            const numLayer = localStorage.getItem('layer');
+            console.log('layer num = '+numLayer)
+            var iNumLayer = parseInt(numLayer);
+            mandalator.paper.project.layers[iNumLayer].setVisible(true)
+          }
+        }
+      })
 
       $(document).ready(function() {
 
@@ -126,6 +143,7 @@
 
         mandalator = new mandalatorView();
         mandalator.init();
+        //window.mandalator = mandalator
 
       });
 
@@ -141,3 +159,4 @@
     </script>
   </body>
 </html>
+<!-- mandalator.paper.project.layers[0].setVisible(true) -->

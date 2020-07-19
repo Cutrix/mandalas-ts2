@@ -266,7 +266,7 @@
               <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
               <img class="activeimg ringIcon" :src="'assets/img/Icon_ring_active_'+c+'.svg'" />
               <span class="ringNr pr-2">{{ c }}</span>
-              <span class="view"><i class="fa fa-eye"></i></span>
+              <span class="view fa fa-eye" @click="setView(c)" v-visibility-view-directive="{visible: isVisible, layer: c, cLayer: currentLayer}"></span>
             </div>
           </a>
         </div>
@@ -418,17 +418,22 @@
 
 <script lang="ts">
 import axios from "axios";
-//import motifTypeDirective from '@/directives/motif-type';
+import visibilityViewDirective from '@/directives/visibility-view';
   /* ts-ignore */
 import { Component, Prop, Vue } from "vue-property-decorator";
 import 'jquery';
-@Component
+@Component({
+  directives: {
+    visibilityViewDirective
+  }
+})
 export default class Home extends Vue {
   constructor() {
     super();
     this.newImageIsReplicable = false;
     this.tut3 = false;
     this.scrollContainer = false;
+    this.isVisible = true;
   }
   private elements: object[] = [];
   private newImageIsReplicable: boolean;
@@ -436,9 +441,12 @@ export default class Home extends Vue {
   private defaultNumberLayers: number = 3;
   private tut3: boolean;
   private scrollContainer:boolean;
+  private isVisible: boolean;
+  private currentLayer: string = "1";
 
   private mounted() {
     // this.$bvModal.show('modal-1');
+    //console.log('local = '+localStorage.getItem('mandalator'));
     axios.get("elements.json").then((s) => {
       this.elements = s.data;
     });
@@ -530,6 +538,19 @@ export default class Home extends Vue {
 
   public showScrollContainer(): void {
     this.scrollContainer = !this.scrollContainer;
+  }
+
+  public setView(layer: string): void {
+    if (layer == this.currentLayer) {
+      this.isVisible = !this.isVisible;
+    }
+    localStorage.setItem('layer', layer);
+    this.currentLayer = layer
+    $(document).trigger('click', [{visibility: this.isVisible}]);
+  }
+
+  get getViewClass() {
+    return (this.isVisible) ? 'fa fa-eye' : 'fa fa-eye-slash';
   }
 }
 </script>

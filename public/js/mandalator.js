@@ -965,6 +965,7 @@ var mandalatorView = function() {
             m.reInitalSliders("image_count");
         });
 
+
         // update image
 
 
