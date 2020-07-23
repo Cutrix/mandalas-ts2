@@ -272,7 +272,7 @@ function postData(verb, url, data, target) {
       form.appendChild(input);
     }
   }
-  form.style.display = 'none';
+  //form.style.display = 'none';
   document.body.appendChild(form);
   form.submit();
 }
@@ -969,10 +969,9 @@ var mandalatorView = function() {
         // update image
 
 
-        // TODO current: je dois obteir l'image actuellement selectionne
         $(document).on('click', '.image-select-container a.image-item', function(){
             var newimage = $(this).find('img').attr('src');
-            newImage = newimage;
+            //newImage = newimage;
             m.activeLayer.img = newimage ;   // upadte img
             $('.scrollContainer').removeClass('show');
             $('.layer-options-mobile .basic-image-options').removeClass('hidden');
@@ -1811,6 +1810,7 @@ var mandalatorView = function() {
 
         });
 
+        //la zone meme
         $('.layerDelete').on('click', function(){
             var currentLayer = 6-m.activeLayer.num;
             m.LayersArray[currentLayer].clearLayer();

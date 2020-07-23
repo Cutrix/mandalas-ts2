@@ -114,20 +114,36 @@
       //var mandalator = "";
       $(document).on('click', function(e, data) {
         if (data.visibility !== 'undefined') {
+          const totSizeLay = parseInt(data.totalSizeLayer);
+          $('.tut2').addClass('show');
+          $('.layer-options').addClass('show')
           if (data.visibility) {
-            $('.layer-options').hide()
-            const numLayer = localStorage.getItem('layer');
-            console.log('layer num = '+numLayer)
+            const numLayer = data.currentLayer
             var iNumLayer = parseInt(numLayer);
-            mandalator.paper.project.layers[iNumLayer].setVisible(false)
+            mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(false)
           } else {
-            $('.layer-options').hide()
             const numLayer = localStorage.getItem('layer');
             console.log('layer num = '+numLayer)
             var iNumLayer = parseInt(numLayer);
-            mandalator.paper.project.layers[iNumLayer].setVisible(true)
+            mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(true)
           }
         }
+      })
+
+      $(document).on('remove-all-layers', function() {
+        mandalator.LayersArray = [];
+        mandalator.paper.project.layers.forEach(function(elem) {
+          elem.removeChildren()
+        })
+      })
+
+      $(document).on('add-layer', function(e, data) {
+        var newLayer = new layerData(data.nbLayer, '', 45);
+         mandalator.paper.project.addLayer(newLayer)
+        mandalator.initLayers();
+        mandalator.updateLayerList();
+        mandalator.updateLayerOptions();
+        mandalator.setActiveLayer(data.nbLayer)
       })
 
       $(document).ready(function() {
