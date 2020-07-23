@@ -173,8 +173,9 @@ body .layers-list img {
 
 body .layers-list {
     position: absolute;
-    right: 30px;
+    right: 1px;
     height: auto;
+    width: 8%;
     top: 70px;
     text-align: center;
 }
@@ -760,7 +761,8 @@ body.list #list {
     font-size: 11pt;
     font-weight: 700;
     color: white;
-    background-color: rgb(38,153,209);
+    /*background-color: rgb(38,153,209);*/
+    background-color: transparent;
     text-align: left;
     cursor: pointer;
 }
@@ -1199,7 +1201,6 @@ body.list #list {
         width: 230px !important;
         padding-left: 8px;
         padding-right: 8px;
-
         margin-left: -175px;
     }
 
