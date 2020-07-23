@@ -549,7 +549,7 @@ export default class Home extends Vue {
     this.tut3 = !this.tut3;
     //localStorage.setItem('layer', layer);
     this.currentLayer = layer
-    $(document).trigger('click', [{visibility: this.isVisible,
+    $(document).trigger('view', [{visibility: this.isVisible,
       totalSizeLayer: this.defaultNumberLayers,
       currentLayer: this.currentLayer
     }]);
@@ -575,6 +575,11 @@ export default class Home extends Vue {
     }).then((result) => {
       if (result.value) {
         this.defaultNumberLayers--;
+        $(document).trigger('delete-single-layer', [{
+          layer: this.defaultNumberLayers,
+          currentLayer: this.currentLayer
+        }
+        ])
         this.$swal("Calque supprimé avec succès !")
       } else {
         document.oncontextmenu = function() {
@@ -595,11 +600,6 @@ export default class Home extends Vue {
   }
 
   public onImageClick(numImg: number): void {
-    /* TODO A la suppression des calques ou a l'ajout de nouveau claque
-    * TODO l'image ne va plus sur le papier
-    *  TODO Solution:
-    *   je dois effacer la feuikke aka suppressuin des calques
-    */
     $('.image-item-container').trigger('new-layer')
     //alert('zoawe')
   }

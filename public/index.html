@@ -112,18 +112,21 @@
 
     <script>
       //var mandalator = "";
-      $(document).on('click', function(e, data) {
-        if (data.visibility !== 'undefined') {
+      $(document).on('view', function(e, data) {
+        if (data !== null) {
           const totSizeLay = parseInt(data.totalSizeLayer);
           $('.tut2').addClass('show');
           $('.layer-options').addClass('show')
           if (data.visibility) {
+            $('.layer-options').removeClass('show')
+            $('.tut2').hide()
             const numLayer = data.currentLayer
             var iNumLayer = parseInt(numLayer);
             mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(false)
           } else {
-            const numLayer = localStorage.getItem('layer');
-            console.log('layer num = '+numLayer)
+            $('.layer-options').removeClass('show')
+            $('.tut2').hide()
+            const numLayer = data.currentLayer
             var iNumLayer = parseInt(numLayer);
             mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(true)
           }
@@ -131,10 +134,18 @@
       })
 
       $(document).on('remove-all-layers', function() {
+        mandalator.initLayers();
         mandalator.LayersArray = [];
         mandalator.paper.project.layers.forEach(function(elem) {
           elem.removeChildren()
         })
+      })
+
+      $(document).on('delete-single-layer', function(e, data) {
+        const currentLayer = data.currentLayer;
+        var layerToDelete = 6-currentLayer
+        mandalator.LayersArray[layerToDelete].clearLayer();
+        mandalator.paper.project.layers[layerToDelete].removeChildren();
       })
 
       $(document).on('add-layer', function(e, data) {
@@ -147,7 +158,6 @@
       })
 
       $(document).ready(function() {
-
         /*
         CANVAS
          */
