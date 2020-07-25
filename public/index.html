@@ -79,7 +79,7 @@
       } catch (e) {}
     </script>
   </head>
-  <body class="dca3_body">
+  <body class="" style="background-color: lightsalmon;">
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
@@ -120,41 +120,48 @@
           if (data.visibility) {
             $('.layer-options').removeClass('show')
             $('.tut2').hide()
-            const numLayer = data.currentLayer
+            const numLayer = data.currentLayer            
             var iNumLayer = parseInt(numLayer);
             mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(false)
           } else {
             $('.layer-options').removeClass('show')
             $('.tut2').hide()
             const numLayer = data.currentLayer
-            var iNumLayer = parseInt(numLayer);
+            var iNumLayer = parseInt(numLayer);            
             mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(true)
           }
         }
       })
 
       $(document).on('remove-all-layers', function() {
-        mandalator.initLayers();
-        mandalator.LayersArray = [];
+        //mandalator.initLayers();
+        mandalator.LayersArray = []
         mandalator.paper.project.layers.forEach(function(elem) {
           elem.removeChildren()
         })
+        mandalator.paper.project.clear()
+        mandalator.paper.project.layers = mandalator.paper.project.layers.reverse();
+        //mandalator.initLayers();
       })
 
       $(document).on('delete-single-layer', function(e, data) {
-        const currentLayer = data.currentLayer;
+        const currentLayer = data.currentLayer;        
         var layerToDelete = 6-currentLayer
         mandalator.LayersArray[layerToDelete].clearLayer();
         mandalator.paper.project.layers[layerToDelete].removeChildren();
       })
 
-      $(document).on('add-layer', function(e, data) {
-        var newLayer = new layerData(data.nbLayer, '', 45);
-         mandalator.paper.project.addLayer(newLayer)
-        mandalator.initLayers();
+      $(document).on('add-layer', function(e, data) {       
+        console.log('add-layer-push = '+data.nbLayer)
+        mandalator.paper.project.layers = mandalator.paper.project.layers.reverse()
+        
+        var newLayer = new layerData(data.nbLayer, '', 10);       
+        mandalator.LayersArray.push(newLayer)        
+        mandalator.initLayers();        
+        //mandalator.reInitalSliders()
         mandalator.updateLayerList();
         mandalator.updateLayerOptions();
-        mandalator.setActiveLayer(data.nbLayer)
+        mandalator.setActiveLayer(0)
       })
 
       $(document).ready(function() {
