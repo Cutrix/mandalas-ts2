@@ -27,8 +27,9 @@
       <!--<img class="logo" src="assets/img/staedler.svg" />-->
       <canvas id="paper" style="background:#fff; width: 800px; height: 800px;"></canvas>
     </div>
-
-    <div class="scrollContainer desktop" :class="{show: scrollContainer}">
+    <!-- TODO image-select-container -->
+    <!-- TODO basic-image-options -->
+    <div class="scrollContainer desktop" :class="{show: scrollContainer}" style="margin-top: 62px">
       <div class="scrollButtonUp hidden">
         <img src="assets/img/Scroll.svg" />
       </div>
