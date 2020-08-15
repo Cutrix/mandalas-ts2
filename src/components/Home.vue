@@ -27,9 +27,8 @@
       <!--<img class="logo" src="assets/img/staedler.svg" />-->
       <canvas id="paper" style="background:#fff; width: 800px; height: 800px;"></canvas>
     </div>
-    <!-- TODO image-select-container -->
-    <!-- TODO basic-image-options -->
-    <div class="scrollContainer desktop" :class="{show: scrollContainer}" style="margin-top: 62px">
+
+    <div class="scrollContainer desktop" :class="{show: scrollContainer}" style="margin-top: 62px;">
       <div class="scrollButtonUp hidden">
         <img src="assets/img/Scroll.svg" />
       </div>
@@ -45,7 +44,7 @@
               <span class="profileText" v-else><span class="username" style="color: #00458b">{{el.kat}}</span></span>
             </div>
 
-            <b-collapse :id="'accordion-'+index">
+            <b-collapse :id="'accordion-'+index" style="border: 1px solid red">
             <div class="image-item-container" v-for="(v, i) in el.elem" :key="i" @click="onImageClick(i)">
               <!-- Creer des directives pour marquer des elements comme replicable -->
               <div v-if="v.replicable"><a href="#" class="image-item"><img :src="'assets/elements/'+v.value+'.svg'" /></a></div>
