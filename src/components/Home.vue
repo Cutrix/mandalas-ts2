@@ -25,10 +25,12 @@
 
     <div class="middiv">
       <!--<img class="logo" src="assets/img/staedler.svg" />-->
-      <canvas id="paper" style="background:#fff; width: 800px; height: 800px;"></canvas>
+      <div class="row">
+        <canvas id="paper" style="background:#fff; width: 800px; height: 800px;" class="pad"></canvas>
+      </div>
     </div>
 
-    <div class="scrollContainer desktop" :class="{show: scrollContainer}" style="margin-top: 62px; margin-right: 50px;">
+    <div class="scrollContainer desktop" :class="{show: scrollContainer}" style="margin-top: 55px; margin-right: 10px; position: absolute; right: 170px; background-color: rgb(117, 96, 73); width: 300px">
       <div class="scrollButtonUp hidden">
         <img src="assets/img/Scroll.svg" />
       </div>
@@ -58,13 +60,13 @@
         <img src="assets/img/Scroll.svg" />
       </div>
     </div>
-    <div class="layer-options tk-museo-sans-rounded desktop" :class="{show: tut3}" style="margin-right: 65px">
+    <div class="layer-options tk-museo-sans-rounded desktop" :class="{show: tut3}" style="margin-right: 65px; margin-right: 65px; background-color: #756049;">
       <div class="basic-image-options">
         <div class="options-header">
           <div class="current-image animated tada" @click="showScrollContainer">
             <img src="assets/img/Icon_fragezeichen_active.svg" class="black">
           </div>
-          <h2 class="element-name"><span class="translate" data-id="15"></span> <span class="layerNumber"></span></h2>
+          <h2 class="element-name" style="color: rgb(117, 96, 73);"><span class="translate" data-id="15"></span> <span class="layerNumber"></span></h2>
         </div>
         <p class="settingsText" v-if="!newImageIsReplicable"><span class="xitems">x</span> <span class="translate" data-id="11" ></span></p>
         <div class="settings" v-if="!newImageIsReplicable">
@@ -224,7 +226,7 @@
     </div>
 
     <div style="float: right; width: 180px; height: 800px; background-color: #756049">
-      <h2 class="text-white text-center">Calques</h2>
+      <h2 class="text-center" style="color: #AA9A8A">Calques</h2>
 
       <!--<div class="tut1 translate animated" data-id="20"></div>-->
       <div class="tut2 translate animated hidden" data-id="21"></div>
@@ -235,9 +237,12 @@
           <div class="layer-list-item empty" :data-rel="defaultNumberLayers-c" v-for="c in defaultNumberLayers" :key="c" @click.right="onLayerRightClick">
             <a href="#" class="select-layer" :data-rel="defaultNumberLayers - c" @click="showTut3">
               <div class="">
-                <img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />
+                <!--<img class="default ringIcon" :src="'assets/img/Icon_ring_'+c+'.svg'" />-->
+                <div style="display: inline; border: 1px solid #aa9a8a; padding: 5px 0;">
+                  <span><img src="/assets/elements/ELEMENTE-01.svg" alt=""></span>
+                </div>
                 <img class="activeimg ringIcon" :src="'assets/img/Icon_ring_active_'+c+'.svg'" />
-                <span class="ringNr pr-2">{{ c }}</span>
+                <span class="ringNr pr-2" style="color: #AA9A8A">{{ c }}</span>
                 <span class="view fa fa-eye" @click="setView(c)" v-visibility-view-directive="{visible: isVisible, layer: c, cLayer: currentLayer}"></span>
               </div>
             </a>
@@ -301,25 +306,25 @@
             </a>
           </div>-->
 
-          <div class="layer-list-item empty" @click="addLayer" id="add-layer">
+          <div class="" @click="addLayer" id="add-layer" style="margin-right: 80px">
             <a href="#" class="">
               <div class="border">
-                <span class=""><i class="fa fa-plus"></i><br>Ajouter un calque</span>
+                <span class="" style="color: #aa9a8a"><i class="fa fa-plus"></i><br>Ajouter un calque</span>
               </div>
             </a>
           </div>
 
-          <div class="layer-list-item empty" id="lang">
+          <!--<div class="layer-list-item empty" id="lang">
             <a href="#" class="">
               <div class="border">
                 <span class="">FR</span>
               </div>
             </a>
-          </div>
+          </div>-->
 
           <hr>
 
-          <div class="layer-list-item empty" @click="removeAllLayer" id="add-layer1">
+          <div class="" @click="removeAllLayer" id="add-layer1">
             <a href="#" class="">
               <div class="border">
                 <span class=""><br>Tout effacer</span>
@@ -610,5 +615,29 @@ export default class Home extends Vue {
 <style scoped>
   #add-layer:hover {
     background-color: #fff;
+  }
+
+  .select-layer {
+    padding-right: 90px;
+    background-color: transparent;
+    width: 80px;
+  }
+
+  div.pad {
+    display: flex;
+    background: url('/images/mandala-bg.jpg');
+    background-position: center;
+    flex-basis: calc(100vh - 4rem);
+    width: 1200px;
+    box-shadow: 0 0 1rem rgba(100, 61, 26, 0.75);
+  }
+
+  .row {
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
   }
 </style>
