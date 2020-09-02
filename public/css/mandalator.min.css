@@ -173,8 +173,9 @@ body .layers-list img {
 
 body .layers-list {
     position: absolute;
-    right: 30px;
+    right: 1px;
     height: auto;
+    width: 8%;
     top: 70px;
     text-align: center;
 }
@@ -190,10 +191,12 @@ div.layer-list-item {
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     height: 40px;
-    width: 75px;
+    /*width: 75px;*/
+    width: 175px;
     color: #000;
+    margin-right: 20px;
 }
 
 body .layers-list div.layer-list-item:first-child a .border {
@@ -248,20 +251,23 @@ div.layer-list-item.empty.active a.select-layer {
     opacity: 1;
 }
 
+/*papa*/
 div.layer-list-item.active a.select-layer,
 div.layer-list-item.empty.active a.select-layer {
-    background: #4797d2;
-    position: relative;
-    color: #fff;
+    /*background: #4797d2;*/
+    background: #fff;
+    /*position: relative;*/
+    /*color: #fff;*/
 }
 
 div.layer-list-item:first-child.active a.select-layer,
 div.layer-list-item:first-child.empty.active a.select-layer {
-    background: #4797d2;
-    position: relative;
-    color: #fff;
-    border-top-left-radius: 2px;
-    overflow: hidden;
+    /*background: #4797d2;*/
+    background: #fff;
+    /*position: relative;*/
+    /*color: #fff;*/
+    /*border-top-left-radius: 2px;*/
+    /*overflow: hidden;*/
 }
 
 body .layers-list div a, .layers-list-mobile div a {
@@ -275,13 +281,14 @@ body .layers-list div a img.activeimg, .layers-list-mobile div a img.activeimg {
 }
 
 div.layer-list-item.active a.select-layer {
-    background: #4797d2;
-    position: relative;
-    color: #fff;
+    /*background: #4797d2;*/
+    background: #fff;
+    /*position: relative;*/
+    /*color: #fff;*/
 }
 
 body .layers-list div.layer-list-item.active:after {
-    position: absolute;
+    /*position: absolute;
     content: "";
     width: 0;
     height: 0;
@@ -290,7 +297,7 @@ body .layers-list div.layer-list-item.active:after {
     border-style: solid;
     border-width: 15px 15px 15px 0;
     border-color: transparent #4797d2 transparent transparent;
-    left: -10px;
+    left: -10px;*/
 }
 
 div.active a.select-layer img.activeimg {
@@ -760,7 +767,8 @@ body.list #list {
     font-size: 11pt;
     font-weight: 700;
     color: white;
-    background-color: rgb(38,153,209);
+    /*background-color: rgb(38,153,209);*/
+    background-color: transparent;
     text-align: left;
     cursor: pointer;
 }
@@ -1199,7 +1207,6 @@ body.list #list {
         width: 230px !important;
         padding-left: 8px;
         padding-right: 8px;
-
         margin-left: -175px;
     }
 
@@ -1473,4 +1480,14 @@ body.list #list {
 
 .hidden {
     display: none;
+}
+
+.active2 {
+    background-color: #fff;
+}
+
+div.layer-list-item.active2 a.select-layer,
+div.layer-list-item.empty.active2 a.select-layer {
+    background: #fff;
+    color: #000;
 }

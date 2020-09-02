@@ -272,7 +272,7 @@ function postData(verb, url, data, target) {
       form.appendChild(input);
     }
   }
-  form.style.display = 'none';
+  //form.style.display = 'none';
   document.body.appendChild(form);
   form.submit();
 }
@@ -353,7 +353,7 @@ $('.select-layer').on('click', function(){
 })
 
 $(function(){
-    doTranslate(EN);
+    doTranslate(FR);
 
     for (var key in langs) {
         if(window.location.href.search(langs[key].url)>0)
@@ -402,7 +402,7 @@ $(function(){
     })
 })
 
-
+//papa3
 var layerData = function(layernum, img, imgamount) {
 
   this.imgAmount = imgamount;
@@ -688,7 +688,6 @@ var mandalatorView = function() {
             m.updateLayerOptions();
 
         }
-
     };
 
     this.updateLayerOptions = function(){
@@ -699,6 +698,7 @@ var mandalatorView = function() {
 
         $('.current-image img').remove();
         if(m.activeLayer.img != ""){
+            //Injection des images
             $('.current-image').html('<img src="'+m.activeLayer.img+'" />');
         }else{
 
@@ -788,7 +788,7 @@ var mandalatorView = function() {
 
         // image list
 
-        $.getJSON("elements.json", function(data){
+        /*$.getJSON("elements.json", function(data){
             var html = '<div class="image-items-container">';
             $.each(data, function (key,val){
                 html += '<div class="profileContainer" style="background-color: '+val.color+'">'
@@ -838,7 +838,7 @@ var mandalatorView = function() {
 
 
         });
-
+        */
         // build-Layer-list
 
         for (var i = 0; i <  m.LayersArray.length; i++){
@@ -965,11 +965,13 @@ var mandalatorView = function() {
             m.reInitalSliders("image_count");
         });
 
+
         // update image
 
-        $(document).on('click', '.image-select-container a.image-item', function(){
 
+        $(document).on('click', '.image-select-container a.image-item', function(){
             var newimage = $(this).find('img').attr('src');
+            //newImage = newimage;
             m.activeLayer.img = newimage ;   // upadte img
             $('.scrollContainer').removeClass('show');
             $('.layer-options-mobile .basic-image-options').removeClass('hidden');
@@ -1044,6 +1046,7 @@ var mandalatorView = function() {
             }else{
                 $('.scrollContainer').addClass('show');
                 $('.layer-options .options-header .current-image').addClass('show');
+                
                 $('.layer-options-mobile .basic-image-options').addClass('hidden');
                 $('.layer-options-mobile .layer-options-tabs').addClass('hidden');
             }
@@ -1065,10 +1068,13 @@ var mandalatorView = function() {
 
     };
 
+    //papa2
+
     this.updateLayerList = function(){
 
         var m = this;
         for (var i = 0; i <  m.LayersArray.length; i++){
+            console.log(m.LayersArray[i])
 
             if(m.LayersArray[i].emptyFlag){
 
@@ -1235,7 +1241,7 @@ var mandalatorView = function() {
         m.paper.project.layers = m.paper.project.layers.reverse();
 
         var logo = new m.paper.Layer()
-        m.paper.project.importSVG('assets/img/staedler.svg',function(item){
+        m.paper.project.importSVG('',function(item){
             var symbol = new m.paper.Symbol(item)
             var size = m.paper.view.size.width/10
             // first place it to get the dimension
@@ -1804,6 +1810,7 @@ var mandalatorView = function() {
 
         });
 
+        //la zone meme
         $('.layerDelete').on('click', function(){
             var currentLayer = 6-m.activeLayer.num;
             m.LayersArray[currentLayer].clearLayer();

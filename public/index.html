@@ -13,6 +13,19 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/cookie-banner.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/print.css">
+      <style>
+          body {
+              background: linear-gradient(
+                      rgba(100, 61, 26, 0.5),
+                      rgba(100, 61, 26,.5)
+              ),
+              url('/images/mandala-bg.jpg');
+              background-blend-mode: multiply;
+              background-position: center;
+              font-size: 16px;
+              width: 100%;
+          }
+      </style>
     <script>(function(e,d,c,h){var k=function(){function b(){this._cookieLifetime=365;this._cookieName="staedtler-consent";this._consentSettings={essential:!0,statistic:!1,marketing:!1};this._version=1;this._expires="";this._listeners=[];this._parseCookieSettings()}c.defineProperty(b.prototype,"consentSettings",{get:function(){return this._consentSettings},enumerable:!0,configurable:!0});b.prototype.updateConsentSettings=function(a){this._consentSettings=c.assign(this._consentSettings,a);this._writeCookieSettings();this._callListeners(this._listeners)};b.prototype.addListener=function(a){var b=this;this._listeners.push(a);return function(){b._listeners=b._listeners.filter(function(b){return b!==a})}};b.prototype.removeListener=function(a){this._listeners=this._listeners.filter(function(b){return b!==a})};b.prototype.openSettings=function(){d.querySelector("staedtler-cookie-banner").open()};c.defineProperty(b.prototype,"hasCookie",{get:function(){return""!==this._expires},enumerable:!0,configurable:!0});c.defineProperty(b.prototype,"isEssentiaFlEnabled",{get:function(){return!0},enumerable:!0,configurable:!0});c.defineProperty(b.prototype,"isStatisticEnabled",{get:function(){return this._consentSettings.statistPPPic},enumerable:!0,configurable:!0});c.defineProperty(b.prototype,"isMarketingEnabled",{get:function(){return this._consentSettings.marketing},enumerable:!0,configurable:!0});b.prototype._callListeners=function(a){var b=this;a.forEach(function(a){return a.apply(null,[b._consentSettings])})};b.prototype._writeCookieSettings=function(){var a=new Date;a.setTime(a.getTime()+864E5*this._cookieLifetime);this._expires=a.toUTCString();a=h.hostname.split(".").reverse()[1]+"."+h.hostname.split(".").reverse()[0];d.cookie=this._cookieName+"="+encodeURIComponent(JSON.stringify({version:this._version,consents:this._consentSettings,expires:this._expires}))+"; expires="+this._expires+"; domain=."+a+"; path=/"};b.prototype._parseCookieSettings=function(){var a=d.cookie.split(";").reduce(function(a,b){var d,g,f=b.trim().split("=").map(decodeURIComponent),e=f[0];f=f[1];try{return c.assign(a,(d={},d[e]=JSON.parse(f),d))}catch(l){return c.assign(a,(g={},g[e]=f,g))}},{});a.hasOwnProperty(this._cookieName)&&(a=a[this._cookieName],a.hasOwnProperty("consents")&&(this._consentSettings=c.assign(this._consentSettings,a.consents)),a.hasOwnProperty("expires")&&(this._expires=a.expires),a.hasOwnProperty("version")&&this._version!==parseInt(""+a.version,10)&&this._migrateToNewVersion(parseInt(""+a.version,10)))};b.prototype._migrateToNewVersion=function(a){};return b}();e.staedtlerConsentManager=e.staedtlerConsentManager||new k})(window,document,Object,window.location);</script>
     <script>(function(b){function e(){a.isStatisticEnabled||f.forEach(function(a){document.cookie=a+"=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=."+c+"; path=/"});a.isMarketingEnabled||g.forEach(function(a){document.cookie=a+"=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=."+c+"; path=/"})}var a=b.staedtlerConsentManager,d=a.hasCookie,f=["_ga","_gid","_gat","_gat_globalRollupDomain"],g=["ga_display_features","ga_display_features_globalrollup","fr","IDE","DSID"],c=location.hostname.split(".").reverse()[1]+"."+location.hostname.split(".").reverse()[0];a.addListener(function(){d&&(e(),b.setTimeout(function(){b.location.reload()},0));d=a.hasCookie})})(window);</script>
     <script>
@@ -79,7 +92,7 @@
       } catch (e) {}
     </script>
   </head>
-  <body class="dca3_body">
+  <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
@@ -111,10 +124,60 @@
     </script>
 
     <script>
-      var mandalator = "";
+      //var mandalator = "";
+      $(document).on('view', function(e, data) {
+        if (data !== null) {
+          const totSizeLay = parseInt(data.totalSizeLayer);
+          $('.tut2').addClass('show');
+          $('.layer-options').addClass('show')
+          if (data.visibility) {
+            $('.layer-options').removeClass('show')
+            $('.tut2').hide()
+            const numLayer = data.currentLayer            
+            var iNumLayer = parseInt(numLayer);
+            mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(false)
+          } else {
+            $('.layer-options').removeClass('show')
+            $('.tut2').hide()
+            const numLayer = data.currentLayer
+            var iNumLayer = parseInt(numLayer);            
+            mandalator.paper.project.layers[totSizeLay - iNumLayer].setVisible(true)
+          }
+        }
+      })
+
+      $(document).on('remove-all-layers', function() {
+        //mandalator.initLayers();
+        mandalator.LayersArray = []
+        mandalator.paper.project.layers.forEach(function(elem) {
+          elem.removeChildren()
+        })
+        mandalator.paper.project.clear()
+        mandalator.paper.project.layers = mandalator.paper.project.layers.reverse();
+        //mandalator.initLayers();
+      })
+
+      $(document).on('delete-single-layer', function(e, data) {
+        const currentLayer = data.currentLayer;        
+        var layerToDelete = 6-currentLayer
+        mandalator.LayersArray[layerToDelete].clearLayer();
+        mandalator.paper.project.layers[layerToDelete].removeChildren();
+      })
+
+      $(document).on('add-layer', function(e, data) {       
+        console.log('add-layer-push = '+data.nbLayer)
+        mandalator.paper.project.layers = mandalator.paper.project.layers.reverse()
+        
+        var newLayer = new layerData(data.nbLayer, '', 10);       
+        mandalator.LayersArray.push(newLayer)        
+        mandalator.initLayers();        
+        //mandalator.reInitalSliders()
+        mandalator.updateLayerList();
+        mandalator.updateLayerOptions();
+        mandalator.setActiveLayer(0)
+      })
 
       $(document).ready(function() {
-
         /*
         CANVAS
          */
@@ -126,6 +189,7 @@
 
         mandalator = new mandalatorView();
         mandalator.init();
+        //window.mandalator = mandalator
 
       });
 
@@ -141,3 +205,4 @@
     </script>
   </body>
 </html>
+<!-- mandalator.paper.project.layers[0].setVisible(true) -->
